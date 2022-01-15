@@ -1,5 +1,6 @@
 # ShareRide
-**Description**: This application offers users an opportunity to find other users who are looking to share car rides by carpooling. The users can either offer rides or accept rides from other users.     
+**Description**: The application provides the users a platform to find commuters that share a common travel route. Users can be matched manually and automatically with other users who are taking a considerably mutual route. The users can either offer rides in their vehicle or request/accept rides from other users. 
+    
 **Team Members**:    
 Sai Aditya Sandupatla   
 Vaishnavi Donepudi    
