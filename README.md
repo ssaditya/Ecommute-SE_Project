@@ -7,5 +7,5 @@ Vaishnavi Donepudi
 Raj Gopala Vamsee Jaggaraju    
 Sai Swaroop Nimmagadda   
 **Tech Stack**:     
-Front-End: Angular    
+Front-End: React
 Back-End: GO Lang
