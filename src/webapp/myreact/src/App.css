@@ -28,6 +28,47 @@
   color: #61dafb;
 }
 
+.row-header{
+  margin:0px auto;
+  padding:0px auto;
+}
+
+.row-content {
+  margin:0px auto;
+  padding: 50px 0px 50px 0px;
+  border-bottom: 1px ridge;
+  min-height:400px;
+}
+
+.jumbotron{
+  padding:2px 2px 2px 2px;
+  margin:0px auto;
+  background-color: #00FF7F;
+}
+
+body{
+  background-color: #ffd0f5;
+}
+
+.card{
+  width: 60%;
+  margin: auto;
+}
+
+h4{
+  text-align: center;
+  background-color: #61dafb;
+  padding: 5px;
+}
+
+.temp{
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.cardbutton{
+  color: #000000;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
