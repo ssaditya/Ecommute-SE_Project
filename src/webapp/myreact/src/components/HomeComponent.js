@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card,CardImg,CardText, CardBody,CardTitle,Button} from 'reactstrap';
+import { Card,CardImg,CardText, CardBody,Button,NavItem} from 'reactstrap';
+import {NavLink} from 'react-router-dom';
 
 function RenderCard({item}){
     return(
@@ -9,7 +10,11 @@ function RenderCard({item}){
                 <h4>{item.mode}</h4>
                 <CardText className='temp'>{item.description}</CardText>
             </CardBody>
-            <Button outline color="info" size="lg" className='cardbutton' block>{item.quote}</Button>
+            <Button outline color="info" size="lg" className='cardbutton' block>
+                <NavLink className="nav-link" to={item.gotoLink}>
+                  {item.quote}
+                </NavLink>
+            </Button>
         </Card>
     );
 }
