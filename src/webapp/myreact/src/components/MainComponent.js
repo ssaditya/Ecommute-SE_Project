@@ -5,6 +5,8 @@ import Driver from './DriverComponent';
 import Rider from './RiderComponent';
 import {Routes,Route,Navigate} from 'react-router-dom';
 import {MODES} from '../shared/modes';
+import ResponsiveDrawer from './ResponsiveDrawer';
+import ResponsiveDrawerDriver from './ResponsiveDrawerDriver';
 
  class Main extends Component{
     constructor(props){
@@ -30,8 +32,8 @@ import {MODES} from '../shared/modes';
                 <Header />
                 <Routes>
                     <Route path="/home" element={<HomePage />} />
-                    <Route path="/driver" element={<Driver/>} />
-                    <Route path="/rider" element={<Rider/>} />
+                    <Route path="/driver" element={<ResponsiveDrawerDriver/>} />
+                    <Route path="/rider" element={<ResponsiveDrawer />} />
                     <Route path="*" element={<Navigate to="/home" />} />
                 </Routes>
             </div>
