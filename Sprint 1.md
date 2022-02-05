@@ -1,6 +1,7 @@
 # Sprint 1 Report
 ## Visual Demo Links
 - [Backend](https://drive.google.com/file/d/1ctCNhc-GnYmWBDm2PjkkkPQuvS9cav4M/view?usp=sharing)
+- [Frontend](https://drive.google.com/file/d/1xmdl2cFTTyOWKrpr0Oyld4CYS3bJ6Htv/view?usp=sharing)
 ## User Stories:
 - Created 17 user stories spanning the features/user requirements of the Ecommute application. 
 - Addition of more user stories depends on the scope of the project and resource availability in the future. 
