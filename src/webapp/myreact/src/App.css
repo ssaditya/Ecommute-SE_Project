@@ -55,6 +55,10 @@ body{
   margin: auto;
 }
 
+.nav-link{
+  color: #000000;
+}
+
 h4{
   text-align: center;
   background-color: #61dafb;
@@ -67,6 +71,11 @@ h4{
 
 .cardbutton{
   color: #000000;
+}
+
+.nav-link:hover{
+  color: black;
+  font-size: 120%;
 }
 
 @keyframes App-logo-spin {
