@@ -29,10 +29,9 @@ func main() {
 	//r.Use(gin.Recovery())
 
 	// **** END POINTS ****
-	//r.GET("/listAllAnouncements", a.ListAnnouncementsView(db))
-	//r.POST("/editAnnoucements/{id}", a.EditAnnouncementView(db))
 	r.POST("/createUser", v.CreateUser(db))
-	//r.POST("/deleteAnnoucement/{id}", a.DeleteAnnouncementView(db))
+	r.PUT("/edituserprofile", v.EditUserProfile(db))
+	r.DELETE("/deleteuser", v.DeleteUser(db))
 
 	// starts server and listens on port 8080
 	r.Run(":8181")
