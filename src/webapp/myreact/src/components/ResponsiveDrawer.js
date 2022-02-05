@@ -18,6 +18,7 @@ import Button from '@mui/material/Button';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@mui/material/Grid';
+import {NavLink} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -129,7 +130,9 @@ function ResponsiveDrawer(props) {
           </Grid>
           <Grid item>
         <div className={classes.items}>
-        <Button variant="outlined" style={{width: 260}}>Request Ride</Button>
+        <Button variant="outlined" style={{width: 260}}><NavLink className="nav-link" to="/riderconfirmation">
+                  Request Ride
+                </NavLink></Button>
         </div>
         
           </Grid>
