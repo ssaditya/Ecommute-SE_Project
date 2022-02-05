@@ -12,7 +12,7 @@ class Header extends Component{
                 <div className='jumbotron'>
                     <div className="container">
                         <div className="row row-header">
-                            <div className="col-12 col-sm-6">
+                            <div className="col-12 col-sm-6" style={{marginLeft: 190}}>
                                 <h1>ECommute</h1>
                                 <p>Welcome to the Eco-Friendly App ECommute! Save fuel while you travel! A single drop can make a difference.</p>
                             </div>
