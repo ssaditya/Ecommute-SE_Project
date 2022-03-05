@@ -18,7 +18,7 @@ func main() {
 
 	// Migrate the User model to the db
 	db.AutoMigrate(&m.USERS{})
-
+	db.AutoMigrate(&m.REGISTEREDTRIPS{})
 	// setting up the webserver with default config
 	r := gin.New()
 
@@ -33,7 +33,7 @@ func main() {
 	r.GET("/getUser/:username", v.GetUser(db))
 	r.PUT("/edituserprofile", v.EditUserProfile(db))
 	r.DELETE("/deleteuser", v.DeleteUser(db))
-
+	r.POST("/createTrip", v.CreateTrip(db))
 	// starts server and listens on port 8080
 	r.Run(":8181")
 }
