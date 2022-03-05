@@ -17,7 +17,7 @@ func main() {
 	}
 
 	// Migrate the User model to the db
-	db.AutoMigrate(&m.USER_INFORMATION{})
+	db.AutoMigrate(&m.USERS{})
 
 	// setting up the webserver with default config
 	r := gin.New()
@@ -30,6 +30,7 @@ func main() {
 
 	// **** END POINTS ****
 	r.POST("/createUser", v.CreateUser(db))
+	r.GET("/getUser/:username", v.GetUser(db))
 	r.PUT("/edituserprofile", v.EditUserProfile(db))
 	r.DELETE("/deleteuser", v.DeleteUser(db))
 

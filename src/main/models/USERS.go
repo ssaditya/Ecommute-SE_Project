@@ -1,6 +1,6 @@
 package models
 
-type USER_INFORMATION struct {
+type USERS struct {
 	User_id  int     `gorm:"primary_key;auto_increment;not_null;unique" form:"user_id" json:"user_id"`
 	Username string  `gorm:"not_null" form:"username" json:"username" binding:"required"`
 	Password string  `gorm:"not_null" form:"password" json:"password" binding:"required"`

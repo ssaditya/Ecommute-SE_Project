@@ -12,7 +12,7 @@ import (
 
 func CreateUser(db *gorm.DB) gin.HandlerFunc {
 	fn := func(c *gin.Context) {
-		var json models.USER_INFORMATION
+		var json models.USERS
 		// try to bind the request json to the Login struct
 		if err := c.ShouldBindJSON(&json); err != nil {
 			// return bad request if field names are wrong
@@ -48,9 +48,36 @@ func CreateUser(db *gorm.DB) gin.HandlerFunc {
 	// return the loginHandlerfunction
 	return gin.HandlerFunc(fn)
 }
+
+func GetUser(db *gorm.DB) gin.HandlerFunc {
+	fn := func(c *gin.Context) {
+
+		var json models.USERS
+
+		if err := c.ShouldBindJSON(&json); err != nil {
+			// return bad request if field names are wrong
+			// and if fields are missing
+			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+			return
+		}
+
+		var record models.USERS
+		if err := db.Where("Username = ?", c.Param("username")).First(&record).Error; err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
+			return
+		}
+
+		c.JSON(http.StatusOK, gin.H{"data": true})
+
+	}
+
+	// return the loginHandlerfunction
+	return gin.HandlerFunc(fn)
+}
+
 func EditUserProfile(db *gorm.DB) gin.HandlerFunc {
 	fn := func(c *gin.Context) {
-		var json models.USER_INFORMATION
+		var json models.USERS
 		// try to bind the request json to the Login struct
 		if err := c.ShouldBindJSON(&json); err != nil {
 			// return bad request if field names are wrong
@@ -71,7 +98,7 @@ func EditUserProfile(db *gorm.DB) gin.HandlerFunc {
 		json.Bio = p.Sanitize(json.Bio)
 
 		//Fetching user information using username
-		var us models.USER_INFORMATION
+		var us models.USERS
 		db.Find(&us, "Username = ?", json.Username)
 
 		result := db.Model(&us).Where("Username=?", json.Username).Updates(json)
@@ -90,7 +117,7 @@ func EditUserProfile(db *gorm.DB) gin.HandlerFunc {
 func DeleteUser(db *gorm.DB) gin.HandlerFunc {
 	fn := func(c *gin.Context) {
 
-		var json models.USER_INFORMATION
+		var json models.USERS
 
 		if err := c.ShouldBindJSON(&json); err != nil {
 			// return bad request if field names are wrong
@@ -99,7 +126,7 @@ func DeleteUser(db *gorm.DB) gin.HandlerFunc {
 			return
 		}
 
-		var record models.USER_INFORMATION
+		var record models.USERS
 		if err := db.Where("Username = ?", json.Username).First(&record).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
 			return
