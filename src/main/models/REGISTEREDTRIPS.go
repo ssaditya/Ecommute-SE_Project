@@ -1,7 +1,7 @@
 package models
 
 type REGISTEREDTRIPS struct {
-	Trip_id      int    `gorm:"primary_key;auto_increment;not_null;unique" form:"trip_id" json:"trip_id"`
+	Trip_id      int    `gorm:"primary_key;auto_increment;not_null" form:"trip_id" json:"trip_id"`
 	Driver_id    int    `gorm:"not_null" form:"driver_id" json:"driver_id" binding:"required"`
 	Source       string `gorm:"not_null" form:"source" json:"source" binding:"required"`
 	Destination  string `gorm:"not_null" form:"destination" json:"destination" binding:"required"`

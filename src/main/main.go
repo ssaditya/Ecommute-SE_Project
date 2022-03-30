@@ -19,7 +19,7 @@ func main() {
 	// Migrate the User model to the db
 	db.AutoMigrate(&m.USERS{})
 	db.AutoMigrate(&m.REGISTEREDTRIPS{})
-	db.AutoMigrate(&m.TRIPMAPPING{})
+	db.AutoMigrate(&m.TRIPMAPPINGS{})
 	// setting up the webserver with default config
 	r := gin.New()
 
