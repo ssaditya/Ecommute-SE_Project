@@ -91,6 +91,14 @@ func EditTrip(db *gorm.DB) gin.HandlerFunc {
 			return
 		}
 
+		var rec models.TRIPMAPPINGS
+		if err := db.Where("trip_id = ?", json.Trip_id).First(&rec).Error; err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
+			return
+		}
+
+		db.Delete(&rec)
+
 		c.JSON(http.StatusOK, trips)
 	}
 	// return the loginHandlerfunction
