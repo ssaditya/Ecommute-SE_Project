@@ -114,7 +114,14 @@ func DeleteTrip(db *gorm.DB) gin.HandlerFunc {
 			return
 		}
 
+		var rec1 models.TRIPMAPPINGS
+		if err := db.Where("trip_id = ?", trip_id).First(&rec1).Error; err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
+			return
+		}
+
 		db.Delete(&rec)
+		db.Delete(&rec1)
 		c.JSON(http.StatusOK, gin.H{"data": true})
 
 	}
