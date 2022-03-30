@@ -118,7 +118,7 @@ func DeleteUser(db *gorm.DB) gin.HandlerFunc {
 		}
 
 		var record models.USERS
-		if err := db.Where("Username = ?", json.Username).First(&record).Error; err != nil {
+		if err := db.Where("username = ?", c.Param("username")).First(&record).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
 			return
 		}

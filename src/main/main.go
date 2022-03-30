@@ -32,7 +32,7 @@ func main() {
 	r.POST("/createUser", v.CreateUser(db))
 	r.GET("/getUserByUsername/:username", v.GetUserByUsername(db))
 	r.PUT("/edituserprofile", v.EditUserProfile(db))
-	r.DELETE("/deleteuser", v.DeleteUser(db))
+	r.DELETE("/deleteuser/:username", v.DeleteUser(db))
 	r.POST("/createTrip", v.CreateTrip(db))
 	// starts server and listens on port 8080
 	r.Run(":8181")
