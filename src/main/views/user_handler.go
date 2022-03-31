@@ -108,15 +108,6 @@ func EditUserProfile(db *gorm.DB) gin.HandlerFunc {
 func DeleteUser(db *gorm.DB) gin.HandlerFunc {
 	fn := func(c *gin.Context) {
 
-		var json models.USERS
-
-		if err := c.ShouldBindJSON(&json); err != nil {
-			// return bad request if field names are wrong
-			// and if fields are missing
-			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-			return
-		}
-
 		var record models.USERS
 		if err := db.Where("username = ?", c.Param("username")).First(&record).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
