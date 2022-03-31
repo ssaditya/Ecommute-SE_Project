@@ -1,6 +1,7 @@
 package views
 
 import (
+	"fmt"
 	"net/http"
 	"strconv"
 
@@ -55,6 +56,27 @@ func GetAllTrips(db *gorm.DB) gin.HandlerFunc {
 
 		c.JSON(http.StatusOK, gin.H{"data": res})
 
+	}
+
+	// return the loginHandlerfunction
+	return gin.HandlerFunc(fn)
+}
+
+func GetTrips(db *gorm.DB) gin.HandlerFunc {
+	fn := func(c *gin.Context) {
+		var json models.REGISTEREDTRIPS
+		//try to bind the request json to the Login struct
+		if err := c.ShouldBindJSON(&json); err != nil {
+			// return bad request if field names are wrong
+			// and if fields are missing
+			fmt.Println("fields are missing")
+			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+			return
+		}
+		var result []models.REGISTEREDTRIPS
+
+		db.Where("source=? AND destination=? AND date_of_trip=? AND no_of_seats >= ?", json.Source, json.Destination, json.Date_of_trip, json.No_of_seats).Find(&result)
+		c.JSON(http.StatusOK, gin.H{"data": result})
 	}
 
 	// return the loginHandlerfunction
