@@ -39,6 +39,7 @@ func main() {
 	r.PUT("/editTrip", v.EditTrip(db))
 	r.DELETE("/deleteTrip/:trip_id", v.DeleteTrip(db))
 	r.POST("/insertTripMapping", v.InsertTripMapping(db))
+	r.GET("/getTrips", v.GetTrips(db))
 	// starts server and listens on port 8181
 	r.Run(":8181")
 }
