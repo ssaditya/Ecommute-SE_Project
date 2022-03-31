@@ -32,8 +32,8 @@ func main() {
 	// **** END POINTS ****
 	r.POST("/createUser", v.CreateUser(db))
 	r.GET("/getUserByUsername/:username", v.GetUserByUsername(db))
-	r.PUT("/edituserprofile", v.EditUserProfile(db))
-	r.DELETE("/deleteuser/:username", v.DeleteUser(db))
+	r.PUT("/edituserProfile", v.EditUserProfile(db))
+	r.DELETE("/deleteUser/:username", v.DeleteUser(db))
 	r.POST("/createTrip", v.CreateTrip(db))
 	r.GET("/getAllTrips", v.GetAllTrips(db))
 	r.PUT("/editTrip", v.EditTrip(db))
