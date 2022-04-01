@@ -19,7 +19,8 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@mui/material/Grid';
 import {NavLink} from 'react-router-dom';
-
+import { useState, useEffect } from 'react';
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,9 +37,75 @@ const useStyles = makeStyles((theme) => ({
 const drawerWidth = 240;
 
 function ResponsiveDrawerDriver(props) {
+  const [pickup, setPickup] = useState("")
+  const [dropOff, setDropOff] = useState("")
+  const [time, setTime] = useState("")
+  const [date, setDate] = useState("")
+  const [seats, setSeats] = useState(1)
   const classes = useStyles();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+  const findMonth = (month) => {
+    for(let i = 0; i < 12; i++) {
+      if(month === months[i] && i < 10) {
+        let x = i + 1;
+        return "0" + x;
+      }
+      else if(month === months[i] && i >= 10) return i + 1;
+    }
+  }
+
+  const pickUpChange = e => {
+    setPickup(e.target.value);
+    console.log(pickup)
+  }
+
+  const dropOffChange = e => {
+    setDropOff(e.target.value);
+    console.log(dropOff)
+  }
+
+  const onSelectDate = (datetime) => {
+    let dateTime = datetime.toString();
+    let c = dateTime.substring(17, 24)
+    setTime(c);
+    console.log(dateTime.substring(4,7))
+    let month = findMonth(dateTime.substring(4,7))
+    let day = dateTime.substring(8,10)
+    let year = dateTime.substring(11,15)
+    setDate(month + "/" + day + "/" + year)
+    console.log(date)
+  }
+
+  const onSelectSeats = (seat) => {
+    setSeats(parseInt(seat))
+    console.log(seat)
+  }
+
+
+  useEffect(() => {
+    
+  }, [])  
+
+  const createTrip = () => {
+    axios.post('http://localhost:8181/getTrips', {
+      "trip_id": 1,
+      "driver_id":4,
+      "source":pickup,
+      "destination":dropOff,
+      "date_of_trip":date,
+      "time_of_trip": time,
+      "no_of_seats": seats
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -62,7 +129,7 @@ function ResponsiveDrawerDriver(props) {
       <ListItem button key="Wallet">
         <ListItemIcon>
           <AccountBalanceWalletIcon />
-        </ListItemIcon>
+          </ListItemIcon>
         <ListItemText primary="Wallet" />
       </ListItem>
       <ListItem button key="FAQ">
@@ -106,7 +173,7 @@ function ResponsiveDrawerDriver(props) {
           }}
           open
         >
-          {drawer}
+        {drawer}
         </Drawer>
       </Box>
       <Box id='driverForm'>
@@ -118,20 +185,20 @@ function ResponsiveDrawerDriver(props) {
       > 
         <Grid item >
         <form className={classes.root} noValidate autoComplete="off">
-              <TextField id="outlined-basic" label="Source" variant="outlined" />
+              <TextField id="outlined-basic" label="Source" variant="outlined" onChange={pickUpChange}/>
               <ArrowForwardIcon style={{marginTop: 20}}/>
-              <TextField id="outlined-basic" label="Destination" variant="outlined" />
+              <TextField id="outlined-basic" label="Destination" variant="outlined" onChange={dropOffChange}/>
             </form>
         </Grid>
         <Grid item >
-        <div className={classes.items}> <Time /> </div>
+        <div className={classes.items}> <Time onChange={onSelectDate}/> </div>
         </Grid>
         <Grid item>
-        <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}} className={classes.items}><DropDown /></div>
+        <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}} className={classes.items}><DropDown onChange={onSelectSeats}/></div>
           </Grid>
           <Grid item>
         <div className={classes.items}>
-        <Button variant="outlined" style={{width: 260}}><NavLink className="nav-link" to="/driverconfirmation">
+        <Button variant="outlined" style={{width: 260}} onClick={createTrip}><NavLink className="nav-link" to="/driverconfirmation">
                   Publish Ride
                 </NavLink></Button>
 
