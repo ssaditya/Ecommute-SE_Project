@@ -5,6 +5,9 @@ go 1.17
 require github.com/microcosm-cc/bluemonday v1.0.17
 
 require (
+	github.com/gorilla/context v1.1.1 // indirect
+	github.com/gorilla/securecookie v1.1.1 // indirect
+	github.com/gorilla/sessions v1.2.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.4 // indirect
 	github.com/mattn/go-sqlite3 v1.14.9 // indirect
@@ -12,6 +15,7 @@ require (
 
 require (
 	github.com/aymerick/douceur v0.2.0 // indirect
+	github.com/gin-contrib/sessions v0.0.4
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/gin-gonic/gin v1.7.7 // indirect
 	github.com/go-playground/locales v0.13.0 // indirect
