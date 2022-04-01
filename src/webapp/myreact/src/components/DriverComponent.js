@@ -1,14 +1,14 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import ResponsiveDrawerDriver from './ResponsiveDrawerDriver';
 
-class Driver extends Component{
-    constructor(props){
+class Driver extends Component {
+    constructor(props) {
         super(props);
-        this.state={
+        this.state = {
         };
     }
-    render(){
-        return(
+    render() {
+        return (
             <React.Fragment>
                 <div>
                     <ResponsiveDrawerDriver />
