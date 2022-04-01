@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Button } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
 
 function Login() {
 
