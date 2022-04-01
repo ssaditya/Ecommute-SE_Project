@@ -1,14 +1,14 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import ResponsiveDrawer from './ResponsiveDrawer';
 
-class Rider extends Component{
-    constructor(props){
+class Rider extends Component {
+    constructor(props) {
         super(props);
-        this.state={
+        this.state = {
         };
     }
-    render(){
-        return(
+    render() {
+        return (
             <React.Fragment>
                 <div>
                     <ResponsiveDrawer />

@@ -38,74 +38,74 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <div>
-    <div>
-      <ListItem button key="Profile">
-        <ListItemIcon>
-          <AccountCircleRoundedIcon />
-        </ListItemIcon>
-        <ListItemText primary="Profile" />
-      </ListItem>
-      <ListItem button key="Ride History">
-        <ListItemIcon>
-          <SettingsBackupRestoreRoundedIcon />
-        </ListItemIcon>
-        <ListItemText primary="Ride History" />
-      </ListItem>
-      <ListItem button key="Wallet">
-        <ListItemIcon>
-          <AccountBalanceWalletIcon />
-        </ListItemIcon>
-        <ListItemText primary="Wallet" />
-      </ListItem>
-      <ListItem button key="FAQ">
-        <ListItemIcon>
-          <LiveHelpIcon />
-        </ListItemIcon>
-        <ListItemText primary="FAQ" />
-      </ListItem>
-      <ListItem button key="Support">
-        <ListItemIcon>
-          <EmailIcon />
-        </ListItemIcon>
-        <ListItemText primary="Support" />
-      </ListItem>
+      <div>
+        <ListItem button key="Profile">
+          <ListItemIcon>
+            <AccountCircleRoundedIcon />
+          </ListItemIcon>
+          <ListItemText primary="Profile" />
+        </ListItem>
+        <ListItem button key="Ride History">
+          <ListItemIcon>
+            <SettingsBackupRestoreRoundedIcon />
+          </ListItemIcon>
+          <ListItemText primary="Ride History" />
+        </ListItem>
+        <ListItem button key="Wallet">
+          <ListItemIcon>
+            <AccountBalanceWalletIcon />
+          </ListItemIcon>
+          <ListItemText primary="Wallet" />
+        </ListItem>
+        <ListItem button key="FAQ">
+          <ListItemIcon>
+            <LiveHelpIcon />
+          </ListItemIcon>
+          <ListItemText primary="FAQ" />
+        </ListItem>
+        <ListItem button key="Support">
+          <ListItemIcon>
+            <EmailIcon />
+          </ListItemIcon>
+          <ListItemText primary="Support" />
+        </ListItem>
+      </div>
+      <div style={{ marginTop: 510 }}>
+        <ListItem button key="Sign Out">
+          <ListItemIcon>
+            <LogoutIcon />
+          </ListItemIcon>
+          <ListItemText primary="Sign Out" />
+        </ListItem>
+      </div>
     </div>
-    <div style={{marginTop: 510}}>
-      <ListItem button key="Sign Out">
-        <ListItemIcon>
-          <LogoutIcon />
-        </ListItemIcon>
-        <ListItemText primary="Sign Out" />
-      </ListItem>
-    </div>
-    </div>
-    
+
 
   );
   return (
-    <div style={{marginLeft: 350, marginTop: 150}}>
-    <Box sx={{ display: 'flex' }}>
-      <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
-      >
-        <Drawer
-          variant="permanent"
-          sx={{
-            display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-          open
+    <div style={{ marginLeft: 350, marginTop: 150 }}>
+      <Box sx={{ display: 'flex' }}>
+        <Box
+          component="nav"
+          sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+          aria-label="mailbox folders"
         >
-          {drawer}
-        </Drawer>
+          <Drawer
+            variant="permanent"
+            sx={{
+              display: { xs: 'none', sm: 'block' },
+              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            }}
+            open
+          >
+            {drawer}
+          </Drawer>
+        </Box>
+        <Box>
+        </Box>
       </Box>
-      <Box>
-      </Box>
-    </Box>
     </div>
-    
+
   );
 }
 

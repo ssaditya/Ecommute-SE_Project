@@ -1,4 +1,6 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
+import { Button } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 function Login() {
 
@@ -8,12 +10,20 @@ function Login() {
     // User Login info
     const database = [
         {
-            username: "user1",
-            password: "pass1"
+            username: "vaishnavi",
+            password: "vaishnavi"
         },
         {
-            username: "user2",
-            password: "pass2"
+            username: "aditya",
+            password: "aditya"
+        },
+        {
+            username: "swaroop",
+            password: "swaroop"
+        },
+        {
+            username: "vamsee",
+            password: "vamsee"
         }
     ];
 
@@ -53,10 +63,14 @@ function Login() {
             </div>
         );
 
+    function goTo() {
+        window.location.replace("/home")
+    }
+
     // JSX code for login form
     const renderForm = (
         <div className="form">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} >
                 <div className="input-container">
                     <label>Username </label>
                     <input type="text" name="uname" required />
@@ -77,8 +91,8 @@ function Login() {
     return (
         <div className="login">
             <div className="login-form">
-                <div className="title">Sign In</div>
-                {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+                <div className="title">Welcome Ecommuters!</div>
+                {isSubmitted ? goTo() : renderForm}
             </div>
         </div>
     );

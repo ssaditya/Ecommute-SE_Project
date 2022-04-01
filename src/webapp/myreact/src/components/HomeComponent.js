@@ -1,9 +1,9 @@
 import React from 'react';
-import { Card,CardImg,CardText, CardBody,Button} from 'reactstrap';
-import {NavLink} from 'react-router-dom';
+import { Card, CardImg, CardText, CardBody, Button } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
-function RenderCard({item}){
-    return(
+function RenderCard({ item }) {
+    return (
         <Card className='card'>
             <CardImg src={item.image} alt={item.mode} />
             <CardBody>
@@ -12,15 +12,15 @@ function RenderCard({item}){
             </CardBody>
             <Button outline color="info" size="lg" className='cardbutton' block>
                 <NavLink className="nav-link" to={item.gotoLink}>
-                  {item.quote}
+                    {item.quote}
                 </NavLink>
             </Button>
         </Card>
     );
 }
 
-function Home(props){
-    return(
+function Home(props) {
+    return (
         <div className='container'>
             <div className='row align-items-start'>
                 <div className='col-12 col-md m-1'>
@@ -29,7 +29,7 @@ function Home(props){
                 <div className='col-12 col-md m-1'>
                     <RenderCard item={props.rider} />
                 </div>
-            </div>  
+            </div>
         </div>
     );
 }

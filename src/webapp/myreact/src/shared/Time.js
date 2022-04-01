@@ -15,7 +15,7 @@ export default function MaterialUIPickers() {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <Grid>
-      <DateTimePicker
+        <DateTimePicker
           label="Schedule Ride"
           value={value}
           onChange={handleChange}

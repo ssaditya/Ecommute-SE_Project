@@ -1,18 +1,18 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
-class Header extends Component{
-    constructor(props){
+class Header extends Component {
+    constructor(props) {
         super(props);
-        this.state={
+        this.state = {
         };
     }
-    render(){
-        return(
+    render() {
+        return (
             <React.Fragment>
                 <div className='jumbotron'>
                     <div className="container">
                         <div className="row row-header">
-                            <div className="col-12 col-sm-6" style={{marginLeft: 190}}>
+                            <div className="col-12 col-sm-6" style={{ marginLeft: 190 }}>
                                 <h1>ECommute</h1>
                                 <p>Welcome to the Eco-Friendly App ECommute! Save fuel while you travel! A single drop can make a difference.</p>
                             </div>
@@ -22,7 +22,6 @@ class Header extends Component{
             </React.Fragment>
         );
     }
-
 }
 export default Header;
 
