@@ -39,3 +39,14 @@ func TestCreateUser(t *testing.T) {
 	router.ServeHTTP(nr, req1)
 	assert.Equal(t, 200, nr.Code)
 }
+
+func TestDeleteUser(t *testing.T) {
+
+	w := httptest.NewRecorder()
+	req, _ := http.NewRequest("DELETE", "/deleteUser/dave98", nil)
+	router.ServeHTTP(w, req)
+	req.Header.Set("credentials", "include")
+	router.ServeHTTP(w, req)
+
+	assert.Equal(t, 200, w.Code)
+}
