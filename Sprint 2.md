@@ -1,7 +1,7 @@
 # Sprint 2 Report  
-## Visual Demo Links
--
-
+## Tasks Completed for Sprint 2
+- Development of Trip Registration APIs
+- Unit Tests for APIs in backend
 ## BackEnd:
 ### API Documentation 
 ### User Registration API
@@ -85,3 +85,4 @@ localhost:8181/getAllTrips
 ##### Sample Request:  
 ![GetAllTrips](https://user-images.githubusercontent.com/41318802/160990298-10939eb5-6a05-4b92-9982-4a1219942111.JPG)
 
+## FrontEnd:
