@@ -5,17 +5,18 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DateTimePicker from '@mui/lab/DateTimePicker';
 import { Grid } from '@mui/material';
 
-export default function MaterialUIPickers() {
+export default function MaterialUIPickers(props) {
   const [value, setValue] = React.useState(new Date());
 
   const handleChange = (newValue) => {
     setValue(newValue);
+    props.onChange(value);
   };
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <Grid>
-        <DateTimePicker
+      <DateTimePicker
           label="Schedule Ride"
           value={value}
           onChange={handleChange}
