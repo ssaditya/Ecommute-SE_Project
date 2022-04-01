@@ -3,6 +3,13 @@
 - Development of Trip Registration APIs
 - Unit Tests for APIs in backend
 ## BackEnd:
+### Tasks Accomplished
+- Developed the Trip Registration APIs
+- Developed the Trip Mapping APIs
+- Executed Db Tests
+- Executed Unit Tests for CreateUser API
+- Executed Unit Tests for GetAllTrips API
+
 ### API Documentation 
 ### User Registration API
 #### 1. CreateUser API: 
