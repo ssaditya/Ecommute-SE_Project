@@ -109,7 +109,7 @@ function ResponsiveDrawerDriver(props) {
           {drawer}
         </Drawer>
       </Box>
-      <Box>
+      <Box id='driverForm'>
       <Grid
         container
         direction="column"

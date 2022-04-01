@@ -108,19 +108,14 @@ function ResponsiveDrawer(props) {
           {drawer}
         </Drawer>
       </Box>
-      <Box>
-      <Grid
-        container
-        direction="column"
-        justifyContent="space-evenly"
-        alignItems="center"
-      > 
+      <Box id='riderForm'>
+      <Grid container direction="column" justifyContent="space-evenly" alignItems="center"> 
         <Grid item >
         <form className={classes.root} noValidate autoComplete="off">
               <TextField id="outlined-basic" label="Pickup" variant="outlined" />
               <ArrowForwardIcon style={{marginTop: 20}}/>
               <TextField id="outlined-basic" label="Drop Off" variant="outlined" />
-            </form>
+        </form>
         </Grid>
         <Grid item >
         <div className={classes.items}> <Time /> </div>

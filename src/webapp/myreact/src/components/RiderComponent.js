@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import ResponsiveDrawer from './ResponsiveDrawer';
 
 class Rider extends Component{
     constructor(props){
@@ -10,7 +11,7 @@ class Rider extends Component{
         return(
             <React.Fragment>
                 <div>
-                    <p>Hello this is a rider.</p>
+                    <ResponsiveDrawer />
                 </div>
             </React.Fragment>
         );
