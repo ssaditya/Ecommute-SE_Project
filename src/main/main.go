@@ -54,6 +54,7 @@ func SetupRouter(db *gorm.DB, storeName string, sessionName string) *gin.Engine 
 	r.POST("/createTripMapping", v.CreateTripMapping(db))
 	r.GET("/getTrips", v.GetTrips(db))
 	r.GET("/getDriverUpcomingTrips/:driver_id", v.GetDriverUpcomingTrips(db))
+	r.GET("/GetRiderUpcomingTrips/:rider_id", v.GetRiderUpcomingTrips(db))
 
 	return r
 }
