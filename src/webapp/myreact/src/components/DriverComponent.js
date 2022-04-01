@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import ResponsiveDrawerDriver from './ResponsiveDrawerDriver';
 
 class Driver extends Component{
     constructor(props){
@@ -10,7 +11,7 @@ class Driver extends Component{
         return(
             <React.Fragment>
                 <div>
-                    <p>Hello this is a driver.</p>
+                    <ResponsiveDrawerDriver />
                 </div>
             </React.Fragment>
         );

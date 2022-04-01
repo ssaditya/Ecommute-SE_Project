@@ -1,9 +1,8 @@
-import react from 'react';
-import {Card,CardImg,CardBody,CardSubtitle,CardTitle,CardText,Button} from "reactstrap";
+import {Card,CardBody,CardSubtitle,CardTitle,CardText,Button} from "reactstrap";
 function RiderConfirmation(props){
     return(
         <div>
-        <Card className='card'>
+        <Card className='card' id='riderConfirmation'>
           {/* <CardImg top width="100%" src="/assets/images/rider.png" alt="Card image cap" /> */}
           <CardBody>
             <CardTitle>Trip Confirmed</CardTitle>

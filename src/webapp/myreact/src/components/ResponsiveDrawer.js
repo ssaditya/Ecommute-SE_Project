@@ -5,8 +5,8 @@ import Drawer from '@mui/material/Drawer';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import Time from './Time'
-import DropDown from './DropDown'
+import Time from '../shared/Time';
+import DropDown from '../shared/DropDown';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import SettingsBackupRestoreRoundedIcon from '@mui/icons-material/SettingsBackupRestoreRounded';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
@@ -108,19 +108,14 @@ function ResponsiveDrawer(props) {
           {drawer}
         </Drawer>
       </Box>
-      <Box>
-      <Grid
-        container
-        direction="column"
-        justifyContent="space-evenly"
-        alignItems="center"
-      > 
+      <Box id='riderForm'>
+      <Grid container direction="column" justifyContent="space-evenly" alignItems="center"> 
         <Grid item >
         <form className={classes.root} noValidate autoComplete="off">
               <TextField id="outlined-basic" label="Pickup" variant="outlined" />
               <ArrowForwardIcon style={{marginTop: 20}}/>
               <TextField id="outlined-basic" label="Drop Off" variant="outlined" />
-            </form>
+        </form>
         </Grid>
         <Grid item >
         <div className={classes.items}> <Time /> </div>

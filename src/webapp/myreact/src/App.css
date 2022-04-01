@@ -48,12 +48,13 @@
 }
 
 body{
-  background-color: #ffd0f5;
+  background-color: #F0FFF0;
 }
 
 .card{
-  width: 60%;
+  width: 50%;
   margin: auto;
+  border: #000000 2px solid;
 }
 
 .nav-link{
@@ -86,4 +87,15 @@ h4{
   to {
     transform: rotate(360deg);
   }
+}
+
+#riderForm,#driverForm{
+  border: #000000 solid 2px;
+  padding: 2%;
+  margin-bottom: 10%;
+  background-color: #FFFFFF;
+}
+
+#riderConfirmation,#driverConfirmation{
+  margin-top: 8%;
 }
