@@ -37,12 +37,12 @@ const drawerWidth = 240;
 
 function ResponsiveDrawerDriver(props) {
   const classes = useStyles();
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  //const { window } = props;
+  //const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  //const handleDrawerToggle = () => {
+    //setMobileOpen(!mobileOpen);
+  //};
 
   const drawer = (
     <div>
