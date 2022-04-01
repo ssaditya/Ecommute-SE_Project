@@ -91,7 +91,7 @@ function Login() {
     return (
         <div className="login">
             <div className="login-form">
-                <div className="title">Welcome Ecommuters!</div>
+                <div className="title">Welcome Ecommuter!</div>
                 {isSubmitted ? goTo() : renderForm}
             </div>
         </div>
