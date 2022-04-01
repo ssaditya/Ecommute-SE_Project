@@ -4,12 +4,14 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { useEffect } from 'react';
 
-export default function BasicSelect() {
-  const [age, setAge] = React.useState('');
+export default function BasicSelect(props) {
+  const [age, setAge] = React.useState("");
 
   const handleChange = (event) => {
     setAge(event.target.value);
+    props.onChange(event.target.value)
   };
 
   return (
@@ -36,3 +38,6 @@ export default function BasicSelect() {
 
   );
 }
+
+
+
