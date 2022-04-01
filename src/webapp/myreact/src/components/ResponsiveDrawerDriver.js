@@ -43,10 +43,6 @@ function ResponsiveDrawerDriver(props) {
   const [date, setDate] = useState("")
   const [seats, setSeats] = useState(1)
   const classes = useStyles();
-<<<<<<< HEAD
-  //const { window } = props;
-  //const [mobileOpen, setMobileOpen] = React.useState(false);
-=======
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -109,11 +105,10 @@ function ResponsiveDrawerDriver(props) {
       console.log(error);
     });
   }
->>>>>>> d1593b8c588f1a3b88d7bd8bdad54e80498b290a
 
-  //const handleDrawerToggle = () => {
-    //setMobileOpen(!mobileOpen);
-  //};
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
 
   const drawer = (
     <div>
