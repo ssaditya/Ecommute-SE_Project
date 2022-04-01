@@ -5,8 +5,8 @@ import Drawer from '@mui/material/Drawer';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import Time from './Time'
-import DropDown from './DropDown'
+import Time from '../shared/Time';
+import DropDown from '../shared/DropDown';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import SettingsBackupRestoreRoundedIcon from '@mui/icons-material/SettingsBackupRestoreRounded';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
