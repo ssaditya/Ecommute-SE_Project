@@ -50,3 +50,24 @@ func TestDeleteUser(t *testing.T) {
 
 	assert.Equal(t, 200, w.Code)
 }
+
+func TestEditUserProfile(t *testing.T) {
+	nr := httptest.NewRecorder()
+	user := models.USERS{
+		User_id:  1,
+		Username: "stephen123",
+		Password: "abcd123456",
+		Fname:    "Stephen",
+		Lname:    "Cunninghum",
+		DOB:      "07/06/1990",
+		Phoneno:  "9876543223",
+		Carname:  "toyota",
+		Bio:      "Hey There!",
+	}
+	body, _ := json.Marshal(user)
+	req, _ := http.NewRequest("PUT", "/edituserProfile", strings.NewReader(string(body)))
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("credentials", "include")
+	router.ServeHTTP(nr, req)
+	assert.Equal(t, 200, nr.Code)
+}
