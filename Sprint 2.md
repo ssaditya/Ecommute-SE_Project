@@ -107,8 +107,6 @@ go test -v
 ## FrontEnd:
 ### Tasks Accomplished
 - Refactored UI and modified components
-- Created Login Page
-- Added validation to login-form and gave temporary credentials
 - Used Cypress framework and added frontend unit test cases
 - Integration of Frontend and Backend
 #### Integration of frontend and backend
