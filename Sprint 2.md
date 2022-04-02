@@ -101,7 +101,7 @@ localhost:8181/getAllTrips
 ![Sprint 2 Tests](https://user-images.githubusercontent.com/41318802/161359579-5db8967e-94ae-4791-9dca-5dc89237a69d.JPG)
 
 #### GO Tests:
-cd sr/main  
+cd src/main  
 go build  
 go test -v  
 ## FrontEnd:
@@ -141,3 +141,6 @@ go test -v
     		"experimentalStudio" : true
 	}  
 - To run cypress: npm test  
+
+### Video Demo Link:
+[Integration of Frontend and backend demo](https://drive.google.com/file/d/1VWY_zW-0QAbiDLgeKrQef9fGQltLtqp9/view?usp=sharing)
