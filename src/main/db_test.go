@@ -15,6 +15,7 @@ var storeName string = "testsecret"
 var sessionName string = "testsession"
 var users []models.USERS
 var trips []models.REGISTEREDTRIPS
+var trip_mapping []models.TRIPMAPPINGS
 var router *gin.Engine
 
 func initData(db *gorm.DB) {
@@ -94,6 +95,25 @@ func initData(db *gorm.DB) {
 		},
 	}
 	db.Create(&trips)
+
+	trip_mapping = []models.TRIPMAPPINGS{
+		{
+			Trip_id:     1,
+			Rider_id:    2,
+			No_of_seats: 2,
+		},
+		{
+			Trip_id:     1,
+			Rider_id:    3,
+			No_of_seats: 1,
+		},
+		{
+			Trip_id:     2,
+			Rider_id:    4,
+			No_of_seats: 3,
+		},
+	}
+	db.Create(&trip_mapping)
 }
 
 func setupTestDb(dbName string) *gorm.DB {
@@ -106,9 +126,10 @@ func setupTestDb(dbName string) *gorm.DB {
 	// drop tables if exist
 	db.Migrator().DropTable(models.USERS{})
 	db.Migrator().DropTable(models.REGISTEREDTRIPS{})
+	db.Migrator().DropTable(models.TRIPMAPPINGS{})
 
 	// Migrate USERS and REGISTEREDTRIPS model to the db
-	db.AutoMigrate(&models.REGISTEREDTRIPS{}, &models.USERS{})
+	db.AutoMigrate(&models.REGISTEREDTRIPS{}, &models.USERS{}, &models.TRIPMAPPINGS{})
 
 	return db
 }

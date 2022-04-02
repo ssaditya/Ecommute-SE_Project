@@ -45,3 +45,12 @@ func TestCreateTrip(t *testing.T) {
 	router.ServeHTTP(nr, req1)
 	assert.Equal(t, 200, nr.Code)
 }
+
+func TestDeleteTrip(t *testing.T) {
+	nr := httptest.NewRecorder()
+	req1, _ := http.NewRequest("DELETE", "/deleteTrip/2", nil)
+	router.ServeHTTP(nr, req1)
+	req1.Header.Set("credentials", "include")
+	router.ServeHTTP(nr, req1)
+	assert.Equal(t, 200, nr.Code)
+}
