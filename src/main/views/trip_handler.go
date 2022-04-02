@@ -113,8 +113,8 @@ func EditTrip(db *gorm.DB) gin.HandlerFunc {
 			return
 		}
 
-		var rec models.TRIPMAPPINGS
-		if err := db.Where("trip_id = ?", json.Trip_id).First(&rec).Error; err != nil {
+		var rec []models.TRIPMAPPINGS
+		if err := db.Where("trip_id = ?", json.Trip_id).Find(&rec).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
 			return
 		}
@@ -130,7 +130,7 @@ func EditTrip(db *gorm.DB) gin.HandlerFunc {
 func DeleteTrip(db *gorm.DB) gin.HandlerFunc {
 	fn := func(c *gin.Context) {
 		trip_id, err := strconv.Atoi(c.Param("trip_id"))
-
+		trip_map_id := trip_id
 		if err != nil {
 			// return bad request if field names are wrong
 			// and if fields are missing
@@ -144,14 +144,13 @@ func DeleteTrip(db *gorm.DB) gin.HandlerFunc {
 			return
 		}
 
-		var rec1 models.TRIPMAPPINGS
-		if err := db.Where("trip_id = ?", trip_id).First(&rec1).Error; err != nil {
+		var rec1 []models.TRIPMAPPINGS
+		if err := db.Where("trip_id = ?", trip_map_id).Delete(&rec1).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
 			return
 		}
 
 		db.Delete(&rec)
-		db.Delete(&rec1)
 		c.JSON(http.StatusOK, gin.H{"data": true})
 
 	}
