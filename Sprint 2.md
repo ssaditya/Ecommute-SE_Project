@@ -95,6 +95,9 @@ localhost:8181/getAllTrips
 ![GetAllTrips](https://user-images.githubusercontent.com/41318802/160990298-10939eb5-6a05-4b92-9982-4a1219942111.JPG)
 
 ### Unit Tests for Backend
+- DB testing
+- TestCreateUser
+- TestGetAllTrips   
 ![Sprint 2 Tests](https://user-images.githubusercontent.com/41318802/161359579-5db8967e-94ae-4791-9dca-5dc89237a69d.JPG)
 
 #### GO Tests:
