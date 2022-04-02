@@ -2,6 +2,8 @@
 ## Tasks Completed for Sprint 2
 - Development of Trip Registration APIs
 - Unit Tests for APIs in backend
+- Cypress Tests for Frontend
+- Integration of backend and frontend
 ## BackEnd:
 ### Tasks Accomplished
 - Developed the Trip Registration APIs
@@ -92,4 +94,51 @@ localhost:8181/getAllTrips
 ##### Sample Request:  
 ![GetAllTrips](https://user-images.githubusercontent.com/41318802/160990298-10939eb5-6a05-4b92-9982-4a1219942111.JPG)
 
+### Unit Tests for Backend
+![Sprint 2 Tests](https://user-images.githubusercontent.com/41318802/161359579-5db8967e-94ae-4791-9dca-5dc89237a69d.JPG)
+
+#### GO Tests:
+cd sr/main  
+go build  
+go test -v  
 ## FrontEnd:
+### Tasks Accomplished
+- Refactored UI and modified components
+- Created Login Page
+- Added validation to login-form and gave temporary credentials
+- Used Cypress framework and added frontend unit test cases
+- Integration of Frontend and Backend
+#### Integration of frontend and backend
+<img width="1440" alt="Screen Shot 2022-04-01 at 8 59 20 PM" src="https://user-images.githubusercontent.com/41318802/161360011-d1978dd3-09f9-492e-9024-5843e4544e44.png">
+
+<img width="1435" alt="Screen Shot 2022-04-01 at 8 58 16 PM" src="https://user-images.githubusercontent.com/41318802/161360072-7198b409-2b27-4dfb-8623-d2180dfa1cbc.png">
+
+<img width="1440" alt="Screen Shot 2022-04-01 at 8 58 24 PM" src="https://user-images.githubusercontent.com/41318802/161360111-58b8594e-cfef-4359-b30b-c09adc7b0e6c.png">
+
+<img width="1439" alt="Screen Shot 2022-04-01 at 8 59 58 PM" src="https://user-images.githubusercontent.com/41318802/161360119-8d391f4f-a2f8-4482-b057-bf23f637a1e5.png">
+
+<img width="1440" alt="Screen Shot 2022-04-01 at 9 00 08 PM" src="https://user-images.githubusercontent.com/41318802/161360159-59e59323-905e-48d1-b08b-b328ff77229e.png">
+
+#### Cypress Testing 
+![Cypress_Render_LoginPage](https://user-images.githubusercontent.com/41318802/161360285-77fb9036-86ca-45a8-9d62-98d074aeaa0b.PNG)
+![Cypress_Integration_Tests](https://user-images.githubusercontent.com/41318802/161360308-46738ace-87e0-44a9-b8c6-d53d6f13968c.PNG)
+![Cypress_Testing](https://user-images.githubusercontent.com/41318802/161360375-3b9b328c-8cb6-46c1-893e-48cafa3c2cb4.PNG)
+![Cypress_Unit_Test_Success](https://user-images.githubusercontent.com/41318802/161360436-3df3db98-6a6e-419c-9dd7-7f63714ec602.PNG)
+
+##### Steps To Run and Install:
+To install : npm add cypress --save-dev  
+In package.json,
+
+  	"scripts": {
+    		"start": "react-scripts start",
+    		"build": "react-scripts build",
+    	   add -> "test": "cypress open",
+    		"eject": "react-scripts eject"
+  	}  
+In cypress.json,
+	
+	{
+    		"baseUrl" : "http://localhost:3000",
+    		"experimentalStudio" : true
+	}  
+To run cypress: npm test  
