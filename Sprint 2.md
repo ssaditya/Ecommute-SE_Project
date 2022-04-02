@@ -8,7 +8,7 @@
 ### Tasks Accomplished
 - Developed the Trip Registration APIs
 - Developed the Trip Mapping APIs
-- Executed Db Tests
+- Executed DB Tests
 - Executed Unit Tests for CreateUser API
 - Executed Unit Tests for GetAllTrips API
 
@@ -122,12 +122,12 @@ go test -v
 #### Cypress Testing 
 ![Cypress_Render_LoginPage](https://user-images.githubusercontent.com/41318802/161360285-77fb9036-86ca-45a8-9d62-98d074aeaa0b.PNG)
 ![Cypress_Integration_Tests](https://user-images.githubusercontent.com/41318802/161360308-46738ace-87e0-44a9-b8c6-d53d6f13968c.PNG)
-![Cypress_Testing](https://user-images.githubusercontent.com/41318802/161360375-3b9b328c-8cb6-46c1-893e-48cafa3c2cb4.PNG)
+![Cypress_Testing (1)](https://user-images.githubusercontent.com/41318802/161360588-70ab781a-1ee3-439b-a0bc-eeaf54b23b72.PNG)
 ![Cypress_Unit_Test_Success](https://user-images.githubusercontent.com/41318802/161360436-3df3db98-6a6e-419c-9dd7-7f63714ec602.PNG)
 
 ##### Steps To Run and Install:
-To install : npm add cypress --save-dev  
-In package.json,
+- To install : npm add cypress --save-dev  
+- In package.json,
 
   	"scripts": {
     		"start": "react-scripts start",
@@ -135,10 +135,10 @@ In package.json,
     	   add -> "test": "cypress open",
     		"eject": "react-scripts eject"
   	}  
-In cypress.json,
+- In cypress.json,
 	
 	{
     		"baseUrl" : "http://localhost:3000",
     		"experimentalStudio" : true
 	}  
-To run cypress: npm test  
+- To run cypress: npm test  
