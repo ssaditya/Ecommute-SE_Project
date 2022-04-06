@@ -1,13 +1,43 @@
 import { Card, CardBody, CardSubtitle, CardTitle, CardText, Button } from "reactstrap";
 import {Link} from 'react-router-dom';
 import axios from "axios";
+import { useState, useEffect } from "react";
 
 function DriverConfirmation(props) {
+  const [tripId, setTripId] = useState(1)
   const deleteTrip = () => {
-    axios.delete()
+    axios.delete('http://localhost:8181/deleteTrip/'+`${tripId}`, {
+      
+    })
+    .then(function (response) {
+      console.log(response);
+  
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+   
 
 
   }
+  const getData = () => {
+
+    axios.get('http://localhost:8181/getAllTrips', {
+      
+    })
+    .then(function (response) {
+      console.log(response);
+      console.log("RRR");
+      setTripId(response.data.data.length);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+   
+  }
+  useEffect(() => {
+    getData()
+  },);
 
   return (
     <div>
