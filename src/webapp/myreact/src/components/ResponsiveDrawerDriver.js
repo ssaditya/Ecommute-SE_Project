@@ -89,8 +89,7 @@ function ResponsiveDrawerDriver(props) {
   }, [])  
 
   const createTrip = () => {
-    axios.post('http://localhost:8181/getTrips', {
-      "trip_id": 1,
+    axios.post('http://localhost:8181/createTrip', {
       "driver_id":4,
       "source":pickup,
       "destination":dropOff,
