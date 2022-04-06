@@ -8,6 +8,7 @@ import { MODES } from '../shared/modes';
 import DriverConfirmation from './DriverConfirmationComponent';
 import RiderConfirmation from './RiderConfirmationComponent';
 import Login from './LoginComponent';
+import ResponsiveDriverEdit from './ResponsiveDriverEdit';
 
 class Main extends Component {
     constructor(props) {
@@ -37,6 +38,7 @@ class Main extends Component {
                     <Route path="/rider" element={<Rider />} />
                     <Route path="/driverconfirmation" element={<DriverConfirmation />} />
                     <Route path="/riderconfirmation" element={<RiderConfirmation />} />
+                    <Route path="/edittrip" element={<ResponsiveDriverEdit />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="*" element={<Navigate to="/login" />} />
                 </Routes>

@@ -1,4 +1,5 @@
 import { Card, CardBody, CardSubtitle, CardTitle, CardText, Button } from "reactstrap";
+import {NavLink} from 'react-router-dom';
 
 function DriverConfirmation(props) {
   return (
@@ -9,6 +10,9 @@ function DriverConfirmation(props) {
           <CardTitle>Ride Confirmed</CardTitle>
           <CardSubtitle>Driver mode</CardSubtitle>
           <CardText>Your trip has been scheduled, Happy Ecommuting!.</CardText>
+          <Button style={{marginRight: 20 }}>Edit Ride<NavLink  to="/edittrip">
+                  
+                </NavLink></Button>
           <Button>Cancel Ride</Button>
         </CardBody>
       </Card>
