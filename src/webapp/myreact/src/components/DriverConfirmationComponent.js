@@ -1,13 +1,43 @@
 import { Card, CardBody, CardSubtitle, CardTitle, CardText, Button } from "reactstrap";
-import {NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import axios from "axios";
+import { useState, useEffect } from "react";
 
 function DriverConfirmation(props) {
+  const [tripId, setTripId] = useState(1)
   const deleteTrip = () => {
-    axios.delete()
+    axios.delete('http://localhost:8181/deleteTrip/'+`${tripId}`, {
+      
+    })
+    .then(function (response) {
+      console.log(response);
+  
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+   
 
 
   }
+  const getData = () => {
+
+    axios.get('http://localhost:8181/getAllTrips', {
+      
+    })
+    .then(function (response) {
+      console.log(response);
+      console.log("RRR");
+      setTripId(response.data.data.length);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+   
+  }
+  useEffect(() => {
+    getData()
+  },);
 
   return (
     <div>
@@ -17,9 +47,9 @@ function DriverConfirmation(props) {
           <CardTitle>Ride Confirmed</CardTitle>
           <CardSubtitle>Driver mode</CardSubtitle>
           <CardText>Your trip has been scheduled, Happy Ecommuting!.</CardText>
-          <Button style={{marginRight: 20 }}><NavLink to="/edittrip">
+          <Button style={{marginRight: 20 }}><Link style={{textDecoration:"none", color:"white"}} to="/edittrip">
                     Edit Ride
-                </NavLink></Button>
+                </Link></Button>
           <Button onClick={deleteTrip}>Cancel Ride</Button>
         </CardBody>
       </Card>
