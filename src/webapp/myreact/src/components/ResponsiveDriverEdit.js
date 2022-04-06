@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
 const drawerWidth = 240;
 
 function ResponsiveDriverEdit(props) {
+  const [tripId, setTripId] = useState(1) 
   const [pickup, setPickup] = useState("")
   const [dropOff, setDropOff] = useState("")
   const [time, setTime] = useState("")
@@ -58,6 +59,16 @@ function ResponsiveDriverEdit(props) {
   }
 
   const pickUpChange = e => {
+    axios.get('http://localhost:8181/getAllTrips', {
+      
+    })
+    .then(function (response) {
+      console.log(response);
+      setTripId(response.data.data.length);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
     setPickup(e.target.value);
     console.log(pickup)
   }
@@ -89,8 +100,8 @@ function ResponsiveDriverEdit(props) {
   }, [])  
 
   const createTrip = () => {
-    axios.post('localhost:8181/editTrip', {
-      "trip_id":1,  
+    axios.put('http://localhost:8181/editTrip', {
+      "trip_id":tripId,  
       "driver_id":4,
       "source":pickup,
       "destination":dropOff,

@@ -1,7 +1,14 @@
 import { Card, CardBody, CardSubtitle, CardTitle, CardText, Button } from "reactstrap";
 import {NavLink} from 'react-router-dom';
+import axios from "axios";
 
 function DriverConfirmation(props) {
+  const deleteTrip = () => {
+    axios.delete()
+
+
+  }
+
   return (
     <div>
       <Card className='card' id='driverConfirmation'>
@@ -10,10 +17,10 @@ function DriverConfirmation(props) {
           <CardTitle>Ride Confirmed</CardTitle>
           <CardSubtitle>Driver mode</CardSubtitle>
           <CardText>Your trip has been scheduled, Happy Ecommuting!.</CardText>
-          <Button style={{marginRight: 20 }}>Edit Ride<NavLink  to="/edittrip">
-                  
+          <Button style={{marginRight: 20 }}><NavLink to="/edittrip">
+                    Edit Ride
                 </NavLink></Button>
-          <Button>Cancel Ride</Button>
+          <Button onClick={deleteTrip}>Cancel Ride</Button>
         </CardBody>
       </Card>
     </div>
