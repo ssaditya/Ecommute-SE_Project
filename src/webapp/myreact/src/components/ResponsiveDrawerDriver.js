@@ -183,9 +183,9 @@ function ResponsiveDrawerDriver(props) {
       > 
         <Grid item >
         <form className={classes.root} noValidate autoComplete="off">
-              <TextField id="outlined-basic" label="Source" variant="outlined" onChange={pickUpChange}/>
+              <TextField id="driversource" label="Source" variant="outlined" onChange={pickUpChange}/>
               <ArrowForwardIcon style={{marginTop: 20}}/>
-              <TextField id="outlined-basic" label="Destination" variant="outlined" onChange={dropOffChange}/>
+              <TextField id="driverdestination" label="Destination" variant="outlined" onChange={dropOffChange}/>
             </form>
         </Grid>
         <Grid item >
@@ -196,7 +196,7 @@ function ResponsiveDrawerDriver(props) {
           </Grid>
           <Grid item>
         <div className={classes.items}>
-        <Button variant="outlined" style={{width: 260}} onClick={createTrip}><NavLink className="nav-link" to="/driverconfirmation">
+        <Button variant="outlined" id="driversubmit" style={{width: 260}} onClick={createTrip}><NavLink className="nav-link" to="/driverconfirmation">
                   Publish Ride
                 </NavLink></Button>
 

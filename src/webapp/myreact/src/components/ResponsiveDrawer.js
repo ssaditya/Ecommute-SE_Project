@@ -178,9 +178,9 @@ function ResponsiveDrawer(props) {
       <Grid container direction="column" justifyContent="space-evenly" alignItems="center"> 
         <Grid item >
         <form className={classes.root} noValidate autoComplete="off">
-              <TextField id="outlined-basic" label="Pickup" variant="outlined" onChange={pickUpChange}/>
+              <TextField id="ridersource" label="Pickup" variant="outlined" onChange={pickUpChange}/>
               <ArrowForwardIcon style={{marginTop: 20}}/>
-              <TextField id="outlined-basic" label="Drop Off" variant="outlined" onChange={dropOffChange} />
+              <TextField id="riderdestination" label="Drop Off" variant="outlined" onChange={dropOffChange} />
         </form>
         </Grid>
         <Grid item >
@@ -191,7 +191,7 @@ function ResponsiveDrawer(props) {
           </Grid>
           <Grid item>
         <div className={classes.items}>
-        <Button variant="outlined" style={{width: 260}} onClick={createTrip} ><NavLink className="nav-link" to="/riderconfirmation">
+        <Button variant="outlined" id="ridersubmit" style={{width: 260}} onClick={createTrip} ><NavLink className="nav-link" to="/riderconfirmation">
                   Request Ride
                 </NavLink></Button>
         </div>
