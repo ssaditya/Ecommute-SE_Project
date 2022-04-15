@@ -29,30 +29,38 @@ const drawer = (
                     <ListItemText primary="Profile" />
                 </ListItem>
             </a>
-            <ListItem button key="Ride History">
-                <ListItemIcon>
-                    <SettingsBackupRestoreRoundedIcon />
-                </ListItemIcon>
-                <ListItemText primary="Ride History" />
-            </ListItem>
-            <ListItem button key="Wallet">
-                <ListItemIcon>
-                    <AccountBalanceWalletIcon />
-                </ListItemIcon>
-                <ListItemText primary="Wallet" />
-            </ListItem>
+            <a href='/ridehistory' className='sidepanellinks'>
+                <ListItem button key="Ride History">
+                    <ListItemIcon>
+                        <SettingsBackupRestoreRoundedIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Ride History" />
+                </ListItem>
+            </a>
+            <a href='/wallet' className='sidepanellinks'>
+                <ListItem button key="Wallet">
+                    <ListItemIcon>
+                        <AccountBalanceWalletIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Wallet" />
+                </ListItem>
+            </a>
+            <a href='/faq' className='sidepanellinks'>
             <ListItem button key="FAQ">
                 <ListItemIcon>
                     <LiveHelpIcon />
                 </ListItemIcon>
                 <ListItemText primary="FAQ" />
             </ListItem>
+            </a>
+            <a href='/support' className='sidepanellinks'>
             <ListItem button key="Support">
                 <ListItemIcon>
                     <EmailIcon />
                 </ListItemIcon>
                 <ListItemText primary="Support" />
             </ListItem>
+            </a>
         </div>
 
         <div style={{ marginTop: 289 }} className='signoutdiv'>

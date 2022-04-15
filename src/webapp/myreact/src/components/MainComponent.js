@@ -11,6 +11,10 @@ import Login from './LoginComponent';
 import ResponsiveDriverEdit from './ResponsiveDriverEdit';
 import ResponsiveRiderEdit from './ResponsiveRiderEdit';
 import Profile from './ProfileComponent';
+import RideHistory from './RideHistory';
+import Wallet from './WalletComponent';
+import FAQ from './FAQComponent';
+import Support from './SupportComponent';
 
 class Main extends Component {
     constructor(props) {
@@ -43,6 +47,10 @@ class Main extends Component {
                     <Route path="/edittripdriver" element={<ResponsiveDriverEdit />} />
                     <Route path="/edittriprider" element={<ResponsiveRiderEdit />} />
                     <Route path="/userprofile" element={<Profile />} />
+                    <Route path="/ridehistory" element={<RideHistory />} />
+                    <Route path="/support" element={<Support />} />
+                    <Route path="/wallet" element={<Wallet />} />
+                    <Route path="/faq" element={<FAQ />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="*" element={<Navigate to="/login" />} />
                 </Routes>
