@@ -10,6 +10,7 @@ import RiderConfirmation from './RiderConfirmationComponent';
 import Login from './LoginComponent';
 import ResponsiveDriverEdit from './ResponsiveDriverEdit';
 import ResponsiveRiderEdit from './ResponsiveRiderEdit';
+import Profile from './ProfileComponent';
 
 class Main extends Component {
     constructor(props) {
@@ -40,7 +41,8 @@ class Main extends Component {
                     <Route path="/driverconfirmation" element={<DriverConfirmation />} />
                     <Route path="/riderconfirmation" element={<RiderConfirmation />} />
                     <Route path="/edittripdriver" element={<ResponsiveDriverEdit />} />
-                    <Route path="/edittriprider" element={<ResponsiveRiderEdit />} />   
+                    <Route path="/edittriprider" element={<ResponsiveRiderEdit />} />
+                    <Route path="/userprofile" element={<Profile />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="*" element={<Navigate to="/login" />} />
                 </Routes>

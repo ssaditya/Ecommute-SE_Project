@@ -2,17 +2,8 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import Time from '../shared/Time'
 import DropDown from '../shared/DropDown'
-import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
-import SettingsBackupRestoreRoundedIcon from '@mui/icons-material/SettingsBackupRestoreRounded';
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import LiveHelpIcon from '@mui/icons-material/LiveHelp';
-import EmailIcon from '@mui/icons-material/Email';
-import LogoutIcon from '@mui/icons-material/Logout';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Button from '@mui/material/Button';
 import TextField from '@material-ui/core/TextField';
@@ -21,6 +12,7 @@ import Grid from '@mui/material/Grid';
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from "axios";
+import drawer from './NavbarComponent';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -121,52 +113,6 @@ function ResponsiveDriverEdit(props) {
     setMobileOpen(!mobileOpen);
   };
 
-  const drawer = (
-    <div>
-      <div>
-        <ListItem button key="Profile">
-          <ListItemIcon>
-            <AccountCircleRoundedIcon />
-          </ListItemIcon>
-          <ListItemText primary="Profile" />
-        </ListItem>
-        <ListItem button key="Ride History">
-          <ListItemIcon>
-            <SettingsBackupRestoreRoundedIcon />
-          </ListItemIcon>
-          <ListItemText primary="Ride History" />
-        </ListItem>
-        <ListItem button key="Wallet">
-          <ListItemIcon>
-            <AccountBalanceWalletIcon />
-          </ListItemIcon>
-          <ListItemText primary="Wallet" />
-        </ListItem>
-        <ListItem button key="FAQ">
-          <ListItemIcon>
-            <LiveHelpIcon />
-          </ListItemIcon>
-          <ListItemText primary="FAQ" />
-        </ListItem>
-        <ListItem button key="Support">
-          <ListItemIcon>
-            <EmailIcon />
-          </ListItemIcon>
-          <ListItemText primary="Support" />
-        </ListItem>
-      </div>
-      <div style={{ marginTop: 510 }}>
-        <ListItem button key="Sign Out">
-          <ListItemIcon>
-            <LogoutIcon />
-          </ListItemIcon>
-          <ListItemText primary="Sign Out" />
-        </ListItem>
-      </div>
-    </div>
-
-
-  );
   return (
     <div style={{ marginLeft: 350, marginTop: 150 }}>
       <Box sx={{ display: 'flex' }}>
@@ -187,7 +133,7 @@ function ResponsiveDriverEdit(props) {
           </Drawer>
         </Box>
         <Box id='driverForm'>
-        <h2>Edit Ride : Driver</h2>
+          <h2>Edit Ride : Driver</h2>
           <Grid
             container
             direction="column"

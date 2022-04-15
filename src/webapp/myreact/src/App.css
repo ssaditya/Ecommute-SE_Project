@@ -166,3 +166,8 @@ input[type="submit"]:hover {
   gap: 8px;
   margin: 10px;
 }
+
+a.sidepanellinks {
+  text-decoration: none;
+  color: #000000;
+}
