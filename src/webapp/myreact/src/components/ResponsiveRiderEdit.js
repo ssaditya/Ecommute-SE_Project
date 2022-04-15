@@ -155,7 +155,7 @@ function ResponsiveRiderEdit(props) {
             </Grid>
             <Grid item>
               <div className={classes.items}>
-                <Button variant="outlined" id="editride" style={{ width: 260 }} onClick={createTrip}><NavLink className="nav-link" to="/driverconfirmation">
+                <Button variant="outlined" id="editride" style={{ width: 260 }} onClick={createTrip}><NavLink className="nav-link" to="/riderconfirmation">
                   Edit Ride
                 </NavLink></Button>
               </div>
