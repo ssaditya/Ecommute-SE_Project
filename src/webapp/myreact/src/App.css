@@ -171,3 +171,11 @@ a.sidepanellinks {
   text-decoration: none;
   color: #000000;
 }
+
+.sidepaneldiv {
+  background-color: #FFF8DC;
+}
+
+.signoutdiv {
+  background-color: #A9A9A9;
+}

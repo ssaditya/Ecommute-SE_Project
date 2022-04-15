@@ -40,6 +40,9 @@ function DriverConfirmation(props) {
   });
 
   return (
+    
+    
+
     <div>
       <Card className='card' id='driverConfirmation'>
         {/* <CardImg top width="100%" src="/assets/images/driver.png" alt="Card image cap" /> */}
@@ -50,8 +53,11 @@ function DriverConfirmation(props) {
           <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/edittripdriver">
             Edit Ride
           </Link></Button>
-          <Button onClick={deleteTrip}><Link style={{ textDecoration: "none", color: "white" }} to="/driver">
+          <Button style={{ marginRight: 20 }} onClick={deleteTrip}><Link style={{ textDecoration: "none", color: "white" }} to="/driver">
             Cancel Ride
+          </Link></Button>
+          <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/home">
+            Home
           </Link></Button>
         </CardBody>
       </Card>

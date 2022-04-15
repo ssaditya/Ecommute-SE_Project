@@ -5,13 +5,22 @@ import ListItemText from '@mui/material/ListItemText';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import SettingsBackupRestoreRoundedIcon from '@mui/icons-material/SettingsBackupRestoreRounded';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import HouseIcon from '@mui/icons-material/House';
 import LiveHelpIcon from '@mui/icons-material/LiveHelp';
 import EmailIcon from '@mui/icons-material/Email';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 const drawer = (
-    <div>
+    <div className='sidepaneldiv'>
         <div>
+            <a href='/home' className='sidepanellinks'>
+                <ListItem button key="Home">
+                    <ListItemIcon>
+                        <HouseIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Home" />
+                </ListItem>
+            </a>
             <a href='/userprofile' className='sidepanellinks'>
                 <ListItem button key="Profile">
                     <ListItemIcon>
@@ -45,13 +54,16 @@ const drawer = (
                 <ListItemText primary="Support" />
             </ListItem>
         </div>
-        <div style={{ marginTop: 510 }}>
-            <ListItem button key="Sign Out">
-                <ListItemIcon>
-                    <LogoutIcon />
-                </ListItemIcon>
-                <ListItemText primary="Sign Out" />
-            </ListItem>
+
+        <div style={{ marginTop: 289 }} className='signoutdiv'>
+            <a href='/login' className='sidepanellinks'>
+                <ListItem button key="Sign Out">
+                    <ListItemIcon>
+                        <LogoutIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Sign Out" />
+                </ListItem>
+            </a>
         </div>
     </div>
 );

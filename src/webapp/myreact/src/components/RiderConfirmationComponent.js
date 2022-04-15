@@ -50,8 +50,11 @@ function RiderConfirmation(props) {
           <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/edittriprider">
             Edit Ride
           </Link></Button>
-          <Button onClick={deleteTrip}><Link style={{ textDecoration: "none", color: "white" }} to="/rider">
+          <Button style={{ marginRight: 20 }} onClick={deleteTrip}><Link style={{ textDecoration: "none", color: "white" }} to="/rider">
             Cancel Ride
+          </Link></Button>
+          <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/home">
+            Home
           </Link></Button>
         </CardBody>
       </Card>
