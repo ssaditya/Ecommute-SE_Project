@@ -179,3 +179,15 @@ a.sidepanellinks {
 .signoutdiv {
   background-color: #A9A9A9;
 }
+
+.userprofilediv {
+  position: relative;
+  width: 270%;
+  top: -20%;
+  padding-right: 60%;
+}
+
+.userprofileheading {
+  margin-left: 29%;
+  margin-bottom: 2%;
+}
