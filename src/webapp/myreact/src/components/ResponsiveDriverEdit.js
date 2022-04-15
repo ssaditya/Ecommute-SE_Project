@@ -195,9 +195,9 @@ function ResponsiveDriverEdit(props) {
       > 
         <Grid item >
         <form className={classes.root} noValidate autoComplete="off">
-              <TextField id="outlined-basic" label="Source" variant="outlined" onChange={pickUpChange}/>
+              <TextField id="editridesource" label="Source" variant="outlined" onChange={pickUpChange}/>
               <ArrowForwardIcon style={{marginTop: 20}}/>
-              <TextField id="outlined-basic" label="Destination" variant="outlined" onChange={dropOffChange}/>
+              <TextField id="editridedestination" label="Destination" variant="outlined" onChange={dropOffChange}/>
             </form>
         </Grid>
         <Grid item >
@@ -208,7 +208,7 @@ function ResponsiveDriverEdit(props) {
           </Grid>
           <Grid item>
         <div className={classes.items}>
-        <Button variant="outlined" style={{width: 260}} onClick={createTrip}><NavLink className="nav-link" to="/driverconfirmation">
+        <Button variant="outlined"  id="editride" style={{width: 260}} onClick={createTrip}><NavLink className="nav-link" to="/driverconfirmation">
                   Edit Ride
                 </NavLink></Button>
 

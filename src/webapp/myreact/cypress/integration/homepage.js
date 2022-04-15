@@ -6,5 +6,10 @@ describe("Render the HomePage", () => {
         cy.get('.card').should('exist')
         cy.get('.container').should('exist')
     })
+    it("Successfully going to driver page from home page", () => {
+        cy.get('.card').should('exist')
+        cy.get('.container').should('exist')
+        cy.get('#homebutton').click();
+    })
 })
 

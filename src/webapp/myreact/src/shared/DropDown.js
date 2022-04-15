@@ -21,7 +21,7 @@ export default function BasicSelect(props) {
         <InputLabel id="demo-simple-select-label">Number of seats required</InputLabel>
         <Select
           labelId="demo-simple-select-label"
-          id="demo-simple-select"
+          id="noofseats"
           value={age}
           label="Number of seats"
           onChange={handleChange}
