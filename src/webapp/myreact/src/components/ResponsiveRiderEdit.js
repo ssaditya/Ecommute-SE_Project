@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 const drawerWidth = 240;
 
-function ResponsiveDriverEdit(props) {
+function ResponsiveRiderEdit(props) {
   const [tripId, setTripId] = useState(1)
   const [pickup, setPickup] = useState("")
   const [dropOff, setDropOff] = useState("")
@@ -187,7 +187,7 @@ function ResponsiveDriverEdit(props) {
           </Drawer>
         </Box>
         <Box id='driverForm'>
-        <h2>Edit Ride : Driver</h2>
+        <h2>Edit Ride : Rider</h2>
           <Grid
             container
             direction="column"
@@ -222,8 +222,8 @@ function ResponsiveDriverEdit(props) {
   );
 }
 
-ResponsiveDriverEdit.propTypes = {
+ResponsiveRiderEdit.propTypes = {
   window: PropTypes.func,
 };
 
-export default ResponsiveDriverEdit;
+export default ResponsiveRiderEdit;
