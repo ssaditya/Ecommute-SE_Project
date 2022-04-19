@@ -7,10 +7,8 @@ class  UpcomingTrips extends Component {
 
     render(){
 
-        var upcomingtripsDriver = this.props.driverUpcoming;
         return(
             <div>
-                {upcomingtripsDriver}
             </div>
         );
     }

@@ -6,24 +6,14 @@ import { Card, CardBody, Button } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
-export var driverUpcomingTrips;
-
 class RideHistory extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            driverUpcomingTrips: null
         }
 
-    }
-
-    randomSet(x) {
-        console.log("parammmm" + x);
-        this.setState({
-            driverUpcomingTrips: x
-        })
     }
 
     render() {
@@ -38,9 +28,9 @@ class RideHistory extends Component {
 
             })
                 .then(function (response) {
-                    console.log(response);
+                    //console.log(response);
                     localResponse = JSON.stringify(response.data.data);
-                    //console.log("locall "+localResponse);
+                    console.log(localResponse);
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -82,7 +72,7 @@ class RideHistory extends Component {
                                 <CardBody>
                                     <h3 id="rideHistoryHeader">Upcoming Trips</h3>
                                 </CardBody>
-                                <Button id="upcomingtripsId" onClick={() => { getUpcomingTrips(); this.randomSet(localResponse) }} color="primary" size="md" className='upcomingtripsClass' block>
+                                <Button id="upcomingtripsId" onClick={getUpcomingTrips} color="primary" size="md" className='upcomingtripsClass' block>
                                     <NavLink className="nav-link" to="/upcomingtrips">
                                         View
                                     </NavLink>
