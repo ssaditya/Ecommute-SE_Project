@@ -16,6 +16,8 @@ import RideHistory from './RideHistory';
 import Wallet from './WalletComponent';
 import FAQ from './FAQComponent';
 import Support from './SupportComponent';
+import PastTrips from './PastTripsComponent';
+import UpcomingTrips from './UpcomingTripsComponent';
 
 class Main extends Component {
     constructor(props) {
@@ -52,6 +54,8 @@ class Main extends Component {
                     <Route path="/support" element={<Support />} />
                     <Route path="/wallet" element={<Wallet />} />
                     <Route path="/faq" element={<FAQ />} />
+                    <Route path="/pasttrips" element={<PastTrips />} />
+                    <Route path="/upcomingtrips" element={<UpcomingTrips />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="*" element={<Navigate to="/login" />} />
                     <Route path="/signup" element={<Signup />} />
