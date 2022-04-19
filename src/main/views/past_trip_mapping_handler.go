@@ -57,10 +57,10 @@ func GetPastTripsById(db *gorm.DB) gin.HandlerFunc {
 		mode := c.Param("Mode")
 		Id := c.Param("Id")
 		if mode == "Driver" {
-			db.Where("driver_id = ?", Id).First(&record)
+			db.Where("driver_id = ?", Id).Find(&record)
 
 		} else {
-			db.Where("rider_id = ?", Id).First(&record)
+			db.Where("rider_id = ?", Id).Find(&record)
 
 		}
 
