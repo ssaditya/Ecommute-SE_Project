@@ -92,6 +92,34 @@ func LoginUser(db *gorm.DB) gin.HandlerFunc {
 	return gin.HandlerFunc(fn)
 }
 
+// Logout  - to remove the user from the session
+func LogoutUser(c *gin.Context) {
+	session := sessions.Default(c)
+
+	v := session.Get("uId")
+	if v == nil {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"result": "User not logged in",
+		})
+		return
+	}
+
+	session.Clear()
+	session.Save()
+
+	v = session.Get("uId")
+	if v == nil {
+		c.JSON(http.StatusOK, gin.H{
+			"result": "Logout successful",
+		})
+		return
+	}
+
+	c.JSON(http.StatusUnauthorized, gin.H{
+		"result": "Logout failed",
+	})
+}
+
 func GetUserByUsername(db *gorm.DB) gin.HandlerFunc {
 	fn := func(c *gin.Context) {
 
