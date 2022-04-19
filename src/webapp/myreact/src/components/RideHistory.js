@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import drawer from './NavbarComponent';
-import { Card, CardTitle, CardText } from 'reactstrap';
+import { Card, CardBody, Button } from 'reactstrap';
+import { NavLink} from 'react-router-dom';
 
 class RideHistory extends Component {
 
@@ -35,7 +36,26 @@ class RideHistory extends Component {
                     </Box>
                     <Box>
                         <div>
-
+                            <Card className='pasttripsCard'>
+                                <CardBody>
+                                    <h3 id="rideHistoryHeader">Past Trips</h3>
+                                </CardBody>
+                                <Button id="pasttripsId" color="secondary" size="md" className='pasttripsClass' block>
+                                    <NavLink className="nav-link" to="/pasttrips">
+                                        View
+                                    </NavLink>
+                                </Button>
+                            </Card>
+                            <Card className='upcomingtripsCard'>
+                                <CardBody>
+                                    <h3 id="rideHistoryHeader">Upcoming Trips</h3>
+                                </CardBody>
+                                <Button id="upcomingtripsId" color="primary" size="md" className='upcomingtripsClass' block>
+                                    <NavLink className="nav-link" to="/upcomingtrips">
+                                        View
+                                    </NavLink>
+                                </Button>
+                            </Card>
                         </div>
                     </Box>
                 </Box>
