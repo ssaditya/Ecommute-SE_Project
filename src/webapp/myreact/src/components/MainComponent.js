@@ -8,6 +8,7 @@ import { MODES } from '../shared/modes';
 import DriverConfirmation from './DriverConfirmationComponent';
 import RiderConfirmation from './RiderConfirmationComponent';
 import Login from './LoginComponent';
+import Signup from './SignUp';
 import ResponsiveDriverEdit from './ResponsiveDriverEdit';
 import ResponsiveRiderEdit from './ResponsiveRiderEdit';
 import Profile from './ProfileComponent';
@@ -53,6 +54,7 @@ class Main extends Component {
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="*" element={<Navigate to="/login" />} />
+                    <Route path="/signup" element={<Signup />} />
                 </Routes>
             </div>
         );

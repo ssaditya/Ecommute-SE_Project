@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Button from '@mui/material/Button';
+import Link from '@mui/material/Link';
 
 class Header extends Component {
     constructor(props) {
@@ -13,7 +15,8 @@ class Header extends Component {
                     <div className="container">
                         <div className="row row-header">
                             <div className="col-12 col-sm-6" style={{ marginLeft: 190 }}>
-                                <h1>ECommute</h1>
+                            <Button variant="text" size="large" backgroundColor='green'><Link href="/home">
+                                ECommute</Link></Button> 
                                 <p>Welcome to the Eco-Friendly App ECommute! Save fuel while you travel! A single drop can make a difference.</p>
                             </div>
                         </div>
