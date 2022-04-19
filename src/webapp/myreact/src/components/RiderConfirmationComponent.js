@@ -47,7 +47,7 @@ function RiderConfirmation(props) {
           <CardTitle>Ride Confirmed</CardTitle>
           <CardSubtitle>Rider mode</CardSubtitle>
           <CardText>Your trip has been scheduled, Happy Ecommuting!.</CardText>
-          <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/edittriprider">
+          {/*<Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/edittriprider">
             Edit Ride
           </Link></Button>
           <Button style={{ marginRight: 20 }} onClick={deleteTrip}><Link style={{ textDecoration: "none", color: "white" }} to="/rider">
@@ -55,6 +55,9 @@ function RiderConfirmation(props) {
           </Link></Button>
           <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/home">
             Home
+          </Link></Button>*/}
+          <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/rider">
+            Back
           </Link></Button>
         </CardBody>
       </Card>

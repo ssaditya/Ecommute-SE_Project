@@ -138,7 +138,7 @@ function ResponsiveDrawer(props) {
             </Grid>
             <Grid item>
               <div className={classes.items}>
-                <Button variant="outlined" id="ridersubmit" style={{ width: 260 }} onClick={createTrip} ><NavLink className="nav-link" to="/riderconfirmation">
+                <Button variant="outlined" id="ridersubmit" style={{ width: 260 }} onClick={createTrip} ><NavLink className="nav-link" to="/listofrides">
                   Request Ride
                 </NavLink></Button>
               </div>

@@ -38,9 +38,9 @@ class RideHistory extends Component {
                         <div>
                             <Card className='pasttripsCard'>
                                 <CardBody>
-                                    <h4>Past Trips</h4>
+                                    <h3 id="rideHistoryHeader">Past Trips</h3>
                                 </CardBody>
-                                <Button outline id="pasttripsId" color="secondary" size="md" className='pasttripsClass' block>
+                                <Button id="pasttripsId" color="secondary" size="md" className='pasttripsClass' block>
                                     <NavLink className="nav-link" to="/pasttrips">
                                         View
                                     </NavLink>
@@ -48,9 +48,9 @@ class RideHistory extends Component {
                             </Card>
                             <Card className='upcomingtripsCard'>
                                 <CardBody>
-                                    <h4>Upcoming Trips</h4>
+                                    <h3 id="rideHistoryHeader">Upcoming Trips</h3>
                                 </CardBody>
-                                <Button outline id="upcomingtripsId" color="primary" size="md" className='upcomingtripsClass' block>
+                                <Button id="upcomingtripsId" color="primary" size="md" className='upcomingtripsClass' block>
                                     <NavLink className="nav-link" to="/upcomingtrips">
                                         View
                                     </NavLink>
