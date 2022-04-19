@@ -7,6 +7,7 @@
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@material-ui/core": "^4.12.3",
+    "@material/checkbox": "^13.0.0",
     "@mui/icons-material": "^5.3.1",
     "@mui/lab": "^5.0.0-alpha.67",
     "@mui/material": "^5.4.0",
@@ -19,6 +20,7 @@
     "font-awesome": "^4.7.0",
     "moment": "^2.29.1",
     "react": "^17.0.2",
+    "react-bootstrap-buttons": "^1.0.0",
     "react-dom": "^17.0.2",
     "react-popper": "^2.2.5",
     "react-router-dom": "^6.2.1",
@@ -51,7 +53,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^9.5.3",
+    "cypress": "^9.5.4",
     "lite-server": "^2.6.1"
   }
 }
