@@ -24,10 +24,9 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            modes: MODES
+            modes: MODES,
         };
     }
-
     render() {
 
         const HomePage = () => {

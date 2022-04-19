@@ -40,8 +40,8 @@ function DriverConfirmation(props) {
   });
 
   return (
-    
-    
+
+
 
     <div>
       <Card className='card' id='driverConfirmation'>
@@ -59,7 +59,7 @@ function DriverConfirmation(props) {
           <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/home">
             Home
           </Link></Button>*/}
-          <Button style={{marginRight: 20}}><Link style={{textDecoration: "none", color: "white"}} to="/driver">
+          <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/driver">
             Back
           </Link></Button>
         </CardBody>
