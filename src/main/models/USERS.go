@@ -16,3 +16,9 @@ type USERS struct {
 	R_count  int     `form:"r_count" json:"r_count"`
 	D_count  int     `form:"d_count" json:"d_count"`
 }
+
+// Login struct, mapping json to the variables
+type LOGIN struct {
+	Username string `gorm:"not_null" form:"username" json:"username" binding:"required"`
+	Password string `gorm:"not_null" form:"password" json:"password" binding:"required"`
+}
