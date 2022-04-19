@@ -80,9 +80,10 @@ function ResponsiveDrawer(props) {
 
   }, [])
 
-  const createTrip = () => {
-    axios.post('http://localhost:8181/createTrip', {
-      "driver_id": 4,
+  const getTrips = () => {
+    axios.get('http://localhost:8181/getTrips', {
+      "trip_id": 1,
+      "driver_id": 1,
       "source": pickup,
       "destination": dropOff,
       "date_of_trip": date,
@@ -138,7 +139,7 @@ function ResponsiveDrawer(props) {
             </Grid>
             <Grid item>
               <div className={classes.items}>
-                <Button variant="outlined" id="ridersubmit" style={{ width: 260 }} onClick={createTrip} ><NavLink className="nav-link" to="/listofrides">
+                <Button variant="outlined" id="ridersubmit" style={{ width: 260 }} onClick={getTrips} ><NavLink className="nav-link" to="/listofrides">
                   Request Ride
                 </NavLink></Button>
               </div>

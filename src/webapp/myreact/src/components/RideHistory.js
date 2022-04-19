@@ -3,17 +3,39 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import drawer from './NavbarComponent';
 import { Card, CardBody, Button } from 'reactstrap';
-import { NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 
 class RideHistory extends Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+        }
+
     }
 
     render() {
 
         const drawerWidth = 240;
+        const tripId = 1;
+        var localResponse = null;
+
+        const getUpcomingTrips = () => {
+            //console.log("entered");
+            axios.get('http://localhost:8181/getDriverUpcomingTrips/' + `${tripId}`, {
+
+            })
+                .then(function (response) {
+                    //console.log(response);
+                    localResponse = JSON.stringify(response.data.data);
+                    console.log(localResponse);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
 
         return (
             <div style={{ marginLeft: 350, marginTop: 150 }}>
@@ -50,7 +72,7 @@ class RideHistory extends Component {
                                 <CardBody>
                                     <h3 id="rideHistoryHeader">Upcoming Trips</h3>
                                 </CardBody>
-                                <Button id="upcomingtripsId" color="primary" size="md" className='upcomingtripsClass' block>
+                                <Button id="upcomingtripsId" onClick={getUpcomingTrips} color="primary" size="md" className='upcomingtripsClass' block>
                                     <NavLink className="nav-link" to="/upcomingtrips">
                                         View
                                     </NavLink>

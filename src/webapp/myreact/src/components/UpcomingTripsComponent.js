@@ -6,9 +6,9 @@ class  UpcomingTrips extends Component {
     };
 
     render(){
+
         return(
             <div>
-                Upcoming Trips
             </div>
         );
     }
