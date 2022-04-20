@@ -25,6 +25,15 @@ func TestGetAllTrips(t *testing.T) {
 	assert.Equal(t, string(b), res1)
 }
 
+func TestGetTrips(t *testing.T) {
+
+	w := httptest.NewRecorder()
+	req, _ := http.NewRequest("GET", "/getTrips/Orlando/Gainesville/03-31-2022/1", nil)
+	router.ServeHTTP(w, req)
+
+	assert.Equal(t, 200, w.Code)
+}
+
 func TestCreateTrip(t *testing.T) {
 	trip := models.REGISTEREDTRIPS{
 		Driver_id:    3,
