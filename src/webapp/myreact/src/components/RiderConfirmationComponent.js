@@ -11,16 +11,12 @@ function RiderConfirmation(props) {
     })
       .then(function (response) {
         console.log(response);
-
       })
       .catch(function (error) {
         console.log(error);
       });
-
-
-
   }
-  const getData = () => {
+  /*const getData = () => {
 
     axios.get('http://localhost:8181/getAllTrips', {
 
@@ -37,7 +33,7 @@ function RiderConfirmation(props) {
   }
   useEffect(() => {
     getData()
-  });
+  });*/
 
   return (
     <div>
