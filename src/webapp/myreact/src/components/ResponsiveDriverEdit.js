@@ -51,16 +51,22 @@ function ResponsiveDriverEdit(props) {
   }
 
   const pickUpChange = e => {
-    axios.get('http://localhost:8181/getAllTrips', {
-
-    })
-      .then(function (response) {
-        console.log(response);
-        setTripId(response.data.data.length);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    // axios.put('http://localhost:8181/editTrip', {
+    //   "trip_id":1,
+    //   "driver_id": 4,
+    //   "source": pickup,
+    //   "destination": dropOff,
+    //   "date_of_trip": date,
+    //   "time_of_trip": time,
+    //   "no_of_seats": seats
+    // })
+    //   .then(function (response) {
+    //     console.log(response);
+    //     setTripId(response.data.data.length);
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
     setPickup(e.target.value);
     console.log(pickup)
   }
@@ -142,7 +148,8 @@ function ResponsiveDriverEdit(props) {
           >
             <Grid item >
               <form className={classes.root} noValidate autoComplete="off">
-                <TextField id="editridesource" label="Source" variant="outlined" onChange={pickUpChange} />
+              {/* <TextField id="editridesource" label="Source" variant="outlined" onChange={pickUpChange} /> */}
+                <TextField id="editridesource" label="Source" variant="outlined" onChange={pickUpChange}/>
                 <ArrowForwardIcon style={{ marginTop: 20 }} />
                 <TextField id="editridedestination" label="Destination" variant="outlined" onChange={dropOffChange} />
               </form>

@@ -1,100 +1,54 @@
-import React, { useState } from "react";
+import React from "react";
+import { Grid,Paper,Avatar, Typography, Link } from '@material-ui/core'
+import { TextField } from '@material-ui/core';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Button from '@mui/material/Button';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
 
-function Login() {
 
-    const [errorMessages, setErrorMessages] = useState({});
-    const [isSubmitted, setIsSubmitted] = useState(false);
+const Login=()=>{
+    
+    const paperStyle={padding :20, height:'55vh', width:300, margin:"20px auto"}
+    const btnstyle={margin:'8px 0'}
+    const avatarStyle={backgroundColor:'green'}
+    return(
+        <Grid>
+            <Paper elevation={10} style={paperStyle}>
+                <Grid align="center">
+                <Avatar style={avatarStyle}><LockOpenIcon/></Avatar>
+                <h2>Sign In</h2>
 
-    // User Login info
-    const database = [
-        {
-            username: "vaishnavi",
-            password: "vaishnavi"
-        },
-        {
-            username: "aditya",
-            password: "aditya"
-        },
-        {
-            username: "swaroop",
-            password: "swaroop"
-        },
-        {
-            username: "vamsee",
-            password: "vamsee"
-        }
-    ];
+                </Grid>
+               <TextField label="Email" placeholder="Enter email address*" fullWidth required/>
+               <TextField label="Password" placeholder="Enter Password" type="password" fullWidth required/>
+               <FormControlLabel
+               control={
+                   <Checkbox
+                   name="checkedB"
+                   color="primary"
+                   />
+               }
+               label="Remember Me"
+               />
+            <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth><Link href="/home">
+            Sign In
+            </Link></Button> 
+            <Typography>
+                <Link href="#">
+                Forgot Password?  
+                </Link> 
+                </Typography>
+                <Typography> Do you have an account?      
 
-    const handleSubmit = (event) => {
-        //Prevent page reload
-        event.preventDefault();
-
-        var { uname, pass } = document.forms[0];
-
-        // Find user login info
-        const userData = database.find((user) => user.username === uname.value);
-
-        // Compare user info
-        if (userData) {
-            if (userData.password !== pass.value) {
-                // Invalid password
-                setErrorMessages({ name: "pass", message: errors.pass });
-            } else {
-                setIsSubmitted(true);
-            }
-        } else {
-            // Username not found
-            setErrorMessages({ name: "uname", message: errors.uname });
-        }
-    };
-
-    const errors = {
-        uname: "invalid username",
-        pass: "invalid password"
-    };
-
-    // Generate JSX code for error message
-    const renderErrorMessage = (name) =>
-        name === errorMessages.name && (
-            <div className="error">
-                {errorMessages.message}
-            </div>
-        );
-
-    function goTo() {
-        window.location.replace("/home")
-    }
-
-    // JSX code for login form
-    const renderForm = (
-        <div className="form">
-            <form onSubmit={handleSubmit} >
-                <div className="input-container">
-                    <label>Username </label>
-                    <input id="uname" type="text" name="uname" required />
-                    {renderErrorMessage("uname")}
-                </div>
-                <div className="input-container">
-                    <label>Password </label>
-                    <input id="pass" type="password" name="pass" required />
-                    {renderErrorMessage("pass")}
-                </div>
-                <div className="button-container">
-                    <input id="submit" type="submit" />
-                </div>
-            </form>
-        </div>
-    );
-
-    return (
-        <div className="login">
-            <div className="login-form">
-                <div className="title">Welcome Ecommuter!</div>
-                {isSubmitted ? goTo() : renderForm}
-            </div>
-        </div>
-    );
+                <Link href="/signup">
+                        Sign Up 
+                </Link> 
+                </Typography>
+                </Paper>
+            
+        </Grid>
+    )
 }
 
-export default Login;
-
+export default Login

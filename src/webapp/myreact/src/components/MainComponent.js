@@ -8,6 +8,7 @@ import { MODES } from '../shared/modes';
 import DriverConfirmation from './DriverConfirmationComponent';
 import RiderConfirmation from './RiderConfirmationComponent';
 import Login from './LoginComponent';
+import Signup from './SignUp';
 import ResponsiveDriverEdit from './ResponsiveDriverEdit';
 import ResponsiveRiderEdit from './ResponsiveRiderEdit';
 import Profile from './ProfileComponent';
@@ -15,15 +16,17 @@ import RideHistory from './RideHistory';
 import Wallet from './WalletComponent';
 import FAQ from './FAQComponent';
 import Support from './SupportComponent';
+import PastTrips from './PastTripsComponent';
+import UpcomingTrips from './UpcomingTripsComponent';
+import ListOfRides from './ListOfRidesComponent';
 
 class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            modes: MODES
+            modes: MODES,
         };
     }
-
     render() {
 
         const HomePage = () => {
@@ -51,8 +54,12 @@ class Main extends Component {
                     <Route path="/support" element={<Support />} />
                     <Route path="/wallet" element={<Wallet />} />
                     <Route path="/faq" element={<FAQ />} />
+                    <Route path="/pasttrips" element={<PastTrips />} />
+                    <Route path="/upcomingtrips" element={<UpcomingTrips />} />
+                    <Route path="/listofrides" element={<ListOfRides />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="*" element={<Navigate to="/login" />} />
+                    <Route path="/signup" element={<Signup />} />
                 </Routes>
             </div>
         );
