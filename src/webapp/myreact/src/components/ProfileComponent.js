@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import drawer from './NavbarComponent';
+import MyDrawer from './NavbarComponent';
 import { Card, CardTitle, CardText } from 'reactstrap';
+import { dataService } from './DataService';
 
 class Profile extends Component {
 
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+
+        this.subscription = dataService.getData().subscribe(message => {
+            console.log("abovee dataservice message");
+            console.log(message);
+        })
+    }
+
+    componentWillUnmount() {
+        this.subscription.unsubscribe();
     }
 
     render() {
@@ -30,7 +43,7 @@ class Profile extends Component {
                             }}
                             open
                         >
-                            {drawer}
+                            <MyDrawer />
                         </Drawer>
                     </Box>
                     <Box>

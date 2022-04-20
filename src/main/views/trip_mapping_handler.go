@@ -58,16 +58,14 @@ func DeleteTripMappingByDriver(db *gorm.DB) gin.HandlerFunc {
 		}
 
 		var rec models.TRIPMAPPINGS
-		if err := db.Where("trip_id = ?", trip_id).First(&rec).Error; err != nil {
+		if err := db.Where("trip_id = ?", trip_id).Delete(&rec).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
 			return
 		}
 
-		db.Delete(&rec)
 		c.JSON(http.StatusOK, gin.H{"data": true})
 
 	}
-
 	// return the loginHandlerfunction
 	return gin.HandlerFunc(fn)
 }
@@ -75,6 +73,7 @@ func DeleteTripMappingByDriver(db *gorm.DB) gin.HandlerFunc {
 func DeleteTripMappingByRider(db *gorm.DB) gin.HandlerFunc {
 	fn := func(c *gin.Context) {
 		trip_id, err := strconv.Atoi(c.Param("trip_id"))
+		rider_id, err := strconv.Atoi(c.Param("rider_id"))
 
 		if err != nil {
 			// return bad request if field names are wrong
@@ -84,13 +83,24 @@ func DeleteTripMappingByRider(db *gorm.DB) gin.HandlerFunc {
 		}
 
 		var rec models.TRIPMAPPINGS
-		if err := db.Where("trip_id = ?", trip_id).First(&rec).Error; err != nil {
+		if err := db.Where("trip_id = ? AND rider_id = ?", trip_id, rider_id).First(&rec).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
 			return
 		}
-
-		db.Delete(&rec)
-		c.JSON(http.StatusOK, gin.H{"data": true})
+		if err == nil {
+			var mod models.REGISTEREDTRIPS
+			if err := db.Model(&mod).Where("trip_id = ?", trip_id, rider_id).Update("no_of_seats", gorm.Expr("no_of_seats + ?", rec.No_of_seats)).Error; err != nil {
+				c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
+				return
+			}
+			if err == nil {
+				if err := db.Where("trip_id = ? AND rider_id = ?", trip_id, rider_id).Delete(&rec).Error; err != nil {
+					c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
+					return
+				}
+			}
+			c.JSON(http.StatusOK, gin.H{"data": true})
+		}
 
 	}
 

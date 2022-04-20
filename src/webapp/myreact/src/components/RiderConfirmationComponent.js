@@ -11,16 +11,25 @@ function RiderConfirmation(props) {
     })
       .then(function (response) {
         console.log(response);
-
       })
       .catch(function (error) {
         console.log(error);
       });
-
-
-
   }
-  const getData = () => {
+  const tripid = 1;
+  const riderId = 1;
+  const deleteTripRider = () => {
+    axios.delete('http://localhost:8181/deleteTripMappingByRider/' + `${tripid}` + '/' + `${riderId}`, {
+
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+  /*const getData = () => {
 
     axios.get('http://localhost:8181/getAllTrips', {
 
@@ -37,7 +46,7 @@ function RiderConfirmation(props) {
   }
   useEffect(() => {
     getData()
-  });
+  });*/
 
   return (
     <div>
@@ -47,7 +56,7 @@ function RiderConfirmation(props) {
           <CardTitle>Ride Confirmed</CardTitle>
           <CardSubtitle>Rider mode</CardSubtitle>
           <CardText>Your trip has been scheduled, Happy Ecommuting!.</CardText>
-          <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/edittriprider">
+          {/*<Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/edittriprider">
             Edit Ride
           </Link></Button>
           <Button style={{ marginRight: 20 }} onClick={deleteTrip}><Link style={{ textDecoration: "none", color: "white" }} to="/rider">
@@ -55,6 +64,9 @@ function RiderConfirmation(props) {
           </Link></Button>
           <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/home">
             Home
+          </Link></Button>*/}
+          <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/rider">
+            Back
           </Link></Button>
         </CardBody>
       </Card>

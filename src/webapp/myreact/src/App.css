@@ -191,3 +191,14 @@ a.sidepanellinks {
   margin-left: 29%;
   margin-bottom: 2%;
 }
+
+.pasttripsDriverCard,
+.pasttripsRiderCard,
+.upcomingtripsCard {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#rideHistoryHeader {
+  text-align: center;
+}

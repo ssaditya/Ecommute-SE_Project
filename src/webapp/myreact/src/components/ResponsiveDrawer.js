@@ -12,7 +12,7 @@ import Grid from '@mui/material/Grid';
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import drawer from './NavbarComponent';
+import MyDrawer from './NavbarComponent';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,7 +67,7 @@ function ResponsiveDrawer(props) {
     let month = findMonth(dateTime.substring(4, 7))
     let day = dateTime.substring(8, 10)
     let year = dateTime.substring(11, 15)
-    setDate(month + "/" + day + "/" + year)
+    setDate(month + "-" + day + "-" + year)
     console.log(date)
   }
 
@@ -80,17 +80,19 @@ function ResponsiveDrawer(props) {
 
   }, [])
 
-  const createTrip = () => {
-    axios.post('http://localhost:8181/createTrip', {
-      "driver_id": 4,
-      "source": pickup,
-      "destination": dropOff,
-      "date_of_trip": date,
-      "time_of_trip": time,
-      "no_of_seats": seats
+  const getTrips = () => {
+    axios.get('http://localhost:8181/getTrips/'+`${pickup}`+'/'+`${dropOff}`+'/'+`${date}`+'/'+`${seats}`, {
+      // "trip_id": 1,
+      // "driver_id": 1,
+      // "source": pickup,
+      // "destination": dropOff,
+      // "date_of_trip": date,
+      // "time_of_trip": time,
+      // "no_of_seats": seats
     })
       .then(function (response) {
         console.log(response);
+        console.log("yay");
       })
       .catch(function (error) {
         console.log(error);
@@ -117,7 +119,7 @@ function ResponsiveDrawer(props) {
             }}
             open
           >
-            {drawer}
+            <MyDrawer />
           </Drawer>
         </Box>
         <Box id='riderForm'>
@@ -138,7 +140,7 @@ function ResponsiveDrawer(props) {
             </Grid>
             <Grid item>
               <div className={classes.items}>
-                <Button variant="outlined" id="ridersubmit" style={{ width: 260 }} onClick={createTrip} ><NavLink className="nav-link" to="/riderconfirmation">
+                <Button variant="outlined" id="ridersubmit" style={{ width: 260 }} onClick={getTrips} ><NavLink className="nav-link" to="/listofrides">
                   Request Ride
                 </NavLink></Button>
               </div>

@@ -14,8 +14,11 @@ var dbName string = "test.db"
 var storeName string = "testsecret"
 var sessionName string = "testsession"
 var users []models.USERS
+var user models.USERS
 var trips []models.REGISTEREDTRIPS
 var trip_mapping []models.TRIPMAPPINGS
+var past_trip_mapping []models.PASTTRIPMAPPING
+
 var router *gin.Engine
 
 func initData(db *gorm.DB) {
@@ -73,7 +76,7 @@ func initData(db *gorm.DB) {
 			Driver_id:    1,
 			Source:       "Orlando",
 			Destination:  "Gainesville",
-			Date_of_trip: "03/31/2022",
+			Date_of_trip: "03-31-2022",
 			Time_of_trip: "8:30PM",
 			No_of_seats:  3,
 		},
@@ -81,7 +84,7 @@ func initData(db *gorm.DB) {
 			Driver_id:    2,
 			Source:       "Orlando",
 			Destination:  "Gainesville",
-			Date_of_trip: "03/31/2022",
+			Date_of_trip: "03-31-2022",
 			Time_of_trip: "7:00AM",
 			No_of_seats:  2,
 		},
@@ -89,7 +92,7 @@ func initData(db *gorm.DB) {
 			Driver_id:    1,
 			Source:       "Gainesville",
 			Destination:  "Orlando",
-			Date_of_trip: "03/31/2022",
+			Date_of_trip: "03-31-2022",
 			Time_of_trip: "7:30AM",
 			No_of_seats:  3,
 		},
@@ -114,6 +117,39 @@ func initData(db *gorm.DB) {
 		},
 	}
 	db.Create(&trip_mapping)
+	past_trip_mapping = []models.PASTTRIPMAPPING{
+		{
+			Trip_id:      2,
+			Rider_id:     1,
+			Driver_id:    1,
+			Source:       "Orlando",
+			Destination:  "Gainesville",
+			Date_of_trip: "03-31-2022",
+			Time_of_trip: "8:30PM",
+			Status:       "Cancelled",
+		},
+		{
+			Trip_id:      4,
+			Rider_id:     3,
+			Driver_id:    5,
+			Source:       "Orlando",
+			Destination:  "Gainesville",
+			Date_of_trip: "03-31-2022",
+			Time_of_trip: "8:30PM",
+			Status:       "Completed",
+		},
+		{
+			Trip_id:      1,
+			Rider_id:     3,
+			Driver_id:    2,
+			Source:       "Orlando",
+			Destination:  "Gainesville",
+			Date_of_trip: "03-31-2022",
+			Time_of_trip: "8:30PM",
+			Status:       "Completed",
+		},
+	}
+	db.Create(&trips)
 }
 
 func setupTestDb(dbName string) *gorm.DB {
@@ -127,9 +163,10 @@ func setupTestDb(dbName string) *gorm.DB {
 	db.Migrator().DropTable(models.USERS{})
 	db.Migrator().DropTable(models.REGISTEREDTRIPS{})
 	db.Migrator().DropTable(models.TRIPMAPPINGS{})
+	db.Migrator().DropTable(models.PASTTRIPMAPPING{})
 
 	// Migrate USERS and REGISTEREDTRIPS model to the db
-	db.AutoMigrate(&models.REGISTEREDTRIPS{}, &models.USERS{}, &models.TRIPMAPPINGS{})
+	db.AutoMigrate(&models.REGISTEREDTRIPS{}, &models.USERS{}, &models.TRIPMAPPINGS{}, &models.PASTTRIPMAPPING{})
 
 	return db
 }

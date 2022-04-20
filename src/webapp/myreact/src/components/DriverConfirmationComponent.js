@@ -11,15 +11,12 @@ function DriverConfirmation(props) {
     })
       .then(function (response) {
         console.log(response);
-
       })
       .catch(function (error) {
         console.log(error);
       });
-
-
-
   }
+
   const getData = () => {
 
     axios.get('http://localhost:8181/getAllTrips', {
@@ -27,7 +24,7 @@ function DriverConfirmation(props) {
     })
       .then(function (response) {
         console.log(response);
-        console.log("RRR");
+        //console.log("RRR");
         setTripId(response.data.data.length);
       })
       .catch(function (error) {
@@ -40,8 +37,8 @@ function DriverConfirmation(props) {
   });
 
   return (
-    
-    
+
+
 
     <div>
       <Card className='card' id='driverConfirmation'>
@@ -49,8 +46,8 @@ function DriverConfirmation(props) {
         <CardBody>
           <CardTitle>Ride Confirmed</CardTitle>
           <CardSubtitle>Driver mode</CardSubtitle>
-          <CardText>Your trip has been scheduled, Happy Ecommuting!.</CardText>
-          <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/edittripdriver">
+          <CardText>Your trip has been scheduled, Happy Ecommuting!</CardText>
+          {/*<Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/edittripdriver">
             Edit Ride
           </Link></Button>
           <Button style={{ marginRight: 20 }} onClick={deleteTrip}><Link style={{ textDecoration: "none", color: "white" }} to="/driver">
@@ -58,6 +55,12 @@ function DriverConfirmation(props) {
           </Link></Button>
           <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/home">
             Home
+          </Link></Button>*/}
+          <Button style={{ marginRight: 20 }} onClick={deleteTrip}><Link style={{ textDecoration: "none", color: "white" }} to="/driver">
+            Cancel Ride
+          </Link></Button>
+          <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/driver">
+            Back
           </Link></Button>
         </CardBody>
       </Card>

@@ -40,6 +40,35 @@ func TestCreateUser(t *testing.T) {
 	assert.Equal(t, 200, nr.Code)
 }
 
+func TestLogin(t *testing.T) {
+	login := models.LOGIN{Username: "stephen123", Password: "abcd1234"}
+
+	out, err := json.Marshal(login)
+	if err != nil {
+		t.Fatal(err)
+	}
+	w := httptest.NewRecorder()
+
+	req, err := http.NewRequest("POST", "/login", strings.NewReader(string(out)))
+	if err != nil {
+		t.Fatal(err)
+	}
+	req.Header.Set("Content-Type", "application/json")
+
+	router.ServeHTTP(w, req)
+	assert.Equal(t, 200, w.Code)
+
+}
+
+func TestGetUserByUsername(t *testing.T) {
+
+	w := httptest.NewRecorder()
+	req, _ := http.NewRequest("GET", "/getUserByUsername/stephen123", nil)
+	router.ServeHTTP(w, req)
+
+	assert.Equal(t, 200, w.Code)
+}
+
 func TestDeleteUser(t *testing.T) {
 
 	w := httptest.NewRecorder()
@@ -65,7 +94,7 @@ func TestEditUserProfile(t *testing.T) {
 		Bio:      "Hey There!",
 	}
 	body, _ := json.Marshal(user)
-	req, _ := http.NewRequest("PUT", "/edituserProfile", strings.NewReader(string(body)))
+	req, _ := http.NewRequest("PUT", "/editUserProfile", strings.NewReader(string(body)))
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("credentials", "include")
 	router.ServeHTTP(nr, req)
