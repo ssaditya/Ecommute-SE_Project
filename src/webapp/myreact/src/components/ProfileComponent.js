@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import MyDrawer from './NavbarComponent';
 import { Card, CardTitle, CardText } from 'reactstrap';
+import { dataService } from './DataService';
 
 class Profile extends Component {
 
@@ -11,6 +12,13 @@ class Profile extends Component {
     }
 
     render() {
+
+        console.log("abovee dataservice");
+
+        dataService.getData().subscribe(message => {
+            console.log("abovee dataservice message");
+            console.log(message);
+        })
 
         const drawerWidth = 240;
 
