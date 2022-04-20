@@ -103,12 +103,10 @@ func EditTrip(db *gorm.DB) gin.HandlerFunc {
 		}
 
 		var rec []models.TRIPMAPPINGS
-		if err := db.Where("trip_id = ?", json.Trip_id).Find(&rec).Error; err != nil {
+		if err := db.Where("trip_id = ?", json.Trip_id).Delete(&rec).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
 			return
 		}
-
-		db.Delete(&rec)
 
 		c.JSON(http.StatusOK, trips)
 	}

@@ -55,6 +55,25 @@ func TestCreateTrip(t *testing.T) {
 	assert.Equal(t, 200, nr.Code)
 }
 
+func TestEditTrip(t *testing.T) {
+	nr := httptest.NewRecorder()
+	trip := models.REGISTEREDTRIPS{
+		Trip_id:      1,
+		Driver_id:    1,
+		Source:       "Orlando",
+		Destination:  "Atlanta",
+		Date_of_trip: "04-21-2022",
+		Time_of_trip: "8:30AM",
+		No_of_seats:  4,
+	}
+	body, _ := json.Marshal(trip)
+	req, _ := http.NewRequest("PUT", "/editTrip", strings.NewReader(string(body)))
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("credentials", "include")
+	router.ServeHTTP(nr, req)
+	assert.Equal(t, 200, nr.Code)
+}
+
 func TestDeleteTrip(t *testing.T) {
 	nr := httptest.NewRecorder()
 	req1, _ := http.NewRequest("DELETE", "/deleteTrip/2", nil)
