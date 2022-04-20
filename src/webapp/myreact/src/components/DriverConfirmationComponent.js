@@ -55,10 +55,10 @@ function DriverConfirmation(props) {
           </Link></Button>
           <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/home">
             Home
-          </Link></Button>*/}
+          </Link></Button>
           <Button style={{ marginRight: 20 }} onClick={deleteTrip}><Link style={{ textDecoration: "none", color: "white" }} to="/driver">
             Cancel Ride
-          </Link></Button>
+          </Link></Button>*/}
           <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/driver">
             Back
           </Link></Button>

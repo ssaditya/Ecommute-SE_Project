@@ -5,6 +5,7 @@ import Driver from './DriverComponent';
 import Rider from './RiderComponent';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { MODES } from '../shared/modes';
+import { USER } from '../shared/testUser';
 import DriverConfirmation from './DriverConfirmationComponent';
 import RiderConfirmation from './RiderConfirmationComponent';
 import Login from './LoginComponent';
@@ -25,6 +26,7 @@ class Main extends Component {
         super(props);
         this.state = {
             modes: MODES,
+            user: USER
         };
     }
     render() {
@@ -34,6 +36,14 @@ class Main extends Component {
                 <Home
                     driver={this.state.modes.filter((x) => x.mode === 'Driver')[0]}
                     rider={this.state.modes.filter((y) => y.mode === 'Rider')[0]}
+                />
+            );
+        }
+
+        const ProfilePage = () => {
+            return (
+                <Profile
+                    user={this.state.user}
                 />
             );
         }
@@ -49,7 +59,7 @@ class Main extends Component {
                     <Route path="/riderconfirmation" element={<RiderConfirmation />} />
                     <Route path="/edittripdriver" element={<ResponsiveDriverEdit />} />
                     <Route path="/edittriprider" element={<ResponsiveRiderEdit />} />
-                    <Route path="/userprofile" element={<Profile />} />
+                    <Route path="/userprofile" element={<ProfilePage />} />
                     <Route path="/ridehistory" element={<RideHistory />} />
                     <Route path="/support" element={<Support />} />
                     <Route path="/wallet" element={<Wallet />} />
