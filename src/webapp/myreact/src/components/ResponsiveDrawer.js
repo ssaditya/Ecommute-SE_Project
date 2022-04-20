@@ -67,7 +67,7 @@ function ResponsiveDrawer(props) {
     let month = findMonth(dateTime.substring(4, 7))
     let day = dateTime.substring(8, 10)
     let year = dateTime.substring(11, 15)
-    setDate(month + "/" + day + "/" + year)
+    setDate(month + "-" + day + "-" + year)
     console.log(date)
   }
 
