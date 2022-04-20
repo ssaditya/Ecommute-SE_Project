@@ -159,3 +159,26 @@ func TestDeleteTripMappingByDriver(t *testing.T) {
 	router.ServeHTTP(nr, req1)
 	assert.Equal(t, 200, nr.Code)
 }
+
+func TestDeleteTripMappingByRider(t *testing.T) {
+
+	trip := models.TRIPMAPPINGS{
+		Trip_id:     1,
+		Rider_id:    1,
+		No_of_seats: 0,
+	}
+	payload, _ := json.Marshal(trip)
+	nr := httptest.NewRecorder()
+	req1, _ := http.NewRequest("POST", "/createTripMapping", strings.NewReader(string(payload)))
+	req1.Header.Set("Content-Type", "application/json")
+	req1.Header.Set("credentials", "include")
+	router.ServeHTTP(nr, req1)
+	cookieValue := nr.Result().Header.Get("Set-Cookie")
+	req1.Header.Set("Cookie", cookieValue)
+	router.ServeHTTP(nr, req1)
+	req2, _ := http.NewRequest("DELETE", "/deleteTripMappingByRider/1/1", nil)
+	router.ServeHTTP(nr, req2)
+	req2.Header.Set("credentials", "include")
+	router.ServeHTTP(nr, req2)
+	assert.Equal(t, 200, nr.Code)
+}
