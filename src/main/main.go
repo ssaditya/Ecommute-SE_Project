@@ -62,6 +62,7 @@ func SetupRouter(db *gorm.DB, storeName string, sessionName string) *gin.Engine 
 	//****TRIP MAPPING END POINTS
 	r.POST("/createTripMapping", v.CreateTripMapping(db))
 	r.DELETE("/deleteTripMappingByDriver/:trip_id", v.DeleteTripMappingByDriver(db))
+	r.DELETE("/deleteTripMappingByRider/:trip_id/:rider_id", v.DeleteTripMappingByRider(db))
 
 	//****UPCOMING TRIP END POINTS
 	r.GET("/getDriverUpcomingTrips/:driver_id", v.GetDriverUpcomingTrips(db))
