@@ -9,6 +9,32 @@ import HouseIcon from '@mui/icons-material/House';
 import LiveHelpIcon from '@mui/icons-material/LiveHelp';
 import EmailIcon from '@mui/icons-material/Email';
 import LogoutIcon from '@mui/icons-material/Logout';
+import axios from 'axios';
+import { dataService } from './DataService';
+
+const username = "brad1";
+var localResponse = null;
+
+const getUserDetails = () => {
+
+    axios.get('http://localhost:8181/getUserByUsername/' + `${username}`, {
+
+    })
+        .then(function (response) {
+            console.log(response);
+            localResponse = response.data.data;
+            console.log(localResponse);
+
+            dataService.setData(localResponse.fname);
+            dataService.getData().subscribe(message => {
+                alert(message.value);
+            })
+            window.location.href="/userprofile";
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
 
 function MyDrawer() {
 
@@ -23,7 +49,7 @@ function MyDrawer() {
                         <ListItemText primary="Home" />
                     </ListItem>
                 </a>
-                <a href='/userprofile' className='sidepanellinks'>
+                <a href='#' className='sidepanellinks' onClick={getUserDetails}>
                     <ListItem button key="Profile">
                         <ListItemIcon>
                             <AccountCircleRoundedIcon />
