@@ -11,15 +11,12 @@ function DriverConfirmation(props) {
     })
       .then(function (response) {
         console.log(response);
-
       })
       .catch(function (error) {
         console.log(error);
       });
-
-
-
   }
+
   const getData = () => {
 
     axios.get('http://localhost:8181/getAllTrips', {

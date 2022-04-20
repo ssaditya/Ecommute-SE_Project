@@ -12,7 +12,7 @@ import Grid from '@mui/material/Grid';
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import drawer from './NavbarComponent';
+import MyDrawer from './NavbarComponent';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -135,7 +135,7 @@ function ResponsiveDriverEdit(props) {
             }}
             open
           >
-            {drawer}
+            <MyDrawer />
           </Drawer>
         </Box>
         <Box id='driverForm'>
@@ -148,8 +148,8 @@ function ResponsiveDriverEdit(props) {
           >
             <Grid item >
               <form className={classes.root} noValidate autoComplete="off">
-              {/* <TextField id="editridesource" label="Source" variant="outlined" onChange={pickUpChange} /> */}
-                <TextField id="editridesource" label="Source" variant="outlined" onChange={pickUpChange}/>
+                {/* <TextField id="editridesource" label="Source" variant="outlined" onChange={pickUpChange} /> */}
+                <TextField id="editridesource" label="Source" variant="outlined" onChange={pickUpChange} />
                 <ArrowForwardIcon style={{ marginTop: 20 }} />
                 <TextField id="editridedestination" label="Destination" variant="outlined" onChange={dropOffChange} />
               </form>

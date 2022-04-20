@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import drawer from './NavbarComponent';
+import MyDrawer from './NavbarComponent';
 import { Card, CardTitle, CardText, CardBody, Button } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
@@ -53,7 +53,7 @@ class RideHistory extends Component {
                             }}
                             open
                         >
-                            {drawer}
+                            <MyDrawer />
                         </Drawer>
                     </Box>
                     <Box>

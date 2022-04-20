@@ -10,71 +10,73 @@ import LiveHelpIcon from '@mui/icons-material/LiveHelp';
 import EmailIcon from '@mui/icons-material/Email';
 import LogoutIcon from '@mui/icons-material/Logout';
 
-const drawer = (
-    
-    <div className='sidepaneldiv'>
-        <div>
-            <a href='/home' className='sidepanellinks'>
-                <ListItem button key="Home">
-                    <ListItemIcon>
-                        <HouseIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Home" />
-                </ListItem>
-            </a>
-            <a href='/userprofile' className='sidepanellinks'>
-                <ListItem button key="Profile">
-                    <ListItemIcon>
-                        <AccountCircleRoundedIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Profile" />
-                </ListItem>
-            </a>
-            <a href='/ridehistory' className='sidepanellinks'>
-                <ListItem button key="Ride History">
-                    <ListItemIcon>
-                        <SettingsBackupRestoreRoundedIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Ride History" />
-                </ListItem>
-            </a>
-            <a href='/wallet' className='sidepanellinks'>
-                <ListItem button key="Wallet">
-                    <ListItemIcon>
-                        <AccountBalanceWalletIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Wallet" />
-                </ListItem>
-            </a>
-            <a href='/faq' className='sidepanellinks'>
-            <ListItem button key="FAQ">
-                <ListItemIcon>
-                    <LiveHelpIcon />
-                </ListItemIcon>
-                <ListItemText primary="FAQ" />
-            </ListItem>
-            </a>
-            <a href='/support' className='sidepanellinks'>
-            <ListItem button key="Support">
-                <ListItemIcon>
-                    <EmailIcon />
-                </ListItemIcon>
-                <ListItemText primary="Support" />
-            </ListItem>
-            </a>
-        </div>
+function MyDrawer() {
 
-        <div style={{ marginTop: 289 }} className='signoutdiv'>
-            <a href='/login' className='sidepanellinks'>
-                <ListItem button key="Sign Out">
-                    <ListItemIcon>
-                        <LogoutIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Sign Out" />
-                </ListItem>
-            </a>
-        </div>
-    </div>
-);
+    return (
+        <div className='sidepaneldiv'>
+            <div>
+                <a href='/home' className='sidepanellinks'>
+                    <ListItem button key="Home">
+                        <ListItemIcon>
+                            <HouseIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Home" />
+                    </ListItem>
+                </a>
+                <a href='/userprofile' className='sidepanellinks'>
+                    <ListItem button key="Profile">
+                        <ListItemIcon>
+                            <AccountCircleRoundedIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Profile" />
+                    </ListItem>
+                </a>
+                <a href='/ridehistory' className='sidepanellinks'>
+                    <ListItem button key="Ride History">
+                        <ListItemIcon>
+                            <SettingsBackupRestoreRoundedIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Ride History" />
+                    </ListItem>
+                </a>
+                <a href='/wallet' className='sidepanellinks'>
+                    <ListItem button key="Wallet">
+                        <ListItemIcon>
+                            <AccountBalanceWalletIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Wallet" />
+                    </ListItem>
+                </a>
+                <a href='/faq' className='sidepanellinks'>
+                    <ListItem button key="FAQ">
+                        <ListItemIcon>
+                            <LiveHelpIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="FAQ" />
+                    </ListItem>
+                </a>
+                <a href='/support' className='sidepanellinks'>
+                    <ListItem button key="Support">
+                        <ListItemIcon>
+                            <EmailIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Support" />
+                    </ListItem>
+                </a>
+            </div>
 
-export default drawer;
+            <div style={{ marginTop: 289 }} className='signoutdiv'>
+                <a href='/login' className='sidepanellinks'>
+                    <ListItem button key="Sign Out">
+                        <ListItemIcon>
+                            <LogoutIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Sign Out" />
+                    </ListItem>
+                </a>
+            </div>
+        </div>
+    );
+}
+
+export default MyDrawer;

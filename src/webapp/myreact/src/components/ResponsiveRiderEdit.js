@@ -13,6 +13,7 @@ import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from "axios";
 import drawer from './NavbarComponent';
+import MyDrawer from './NavbarComponent';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -129,7 +130,7 @@ function ResponsiveRiderEdit(props) {
             }}
             open
           >
-            {drawer}
+            <MyDrawer />
           </Drawer>
         </Box>
         <Box id='driverForm'>
