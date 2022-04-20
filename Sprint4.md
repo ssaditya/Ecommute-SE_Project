@@ -24,6 +24,9 @@
 ### API Documentation 
 Please refer to [API Documentation](https://github.com/ssaditya/Ecommute-SE_Project/blob/main/API%20Documentation.md)
 
+### Sprint Board 
+Please refer to [Sprint Board](https://github.com/ssaditya/Ecommute-SE_Project/projects/5)
+
 ### Unit Tests for Backend
 - TestGetUserByUsername 
 - TestLogin
