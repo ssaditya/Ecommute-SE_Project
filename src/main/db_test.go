@@ -115,6 +115,16 @@ func initData(db *gorm.DB) {
 			Rider_id:    4,
 			No_of_seats: 3,
 		},
+		{
+			Trip_id:     3,
+			Rider_id:    2,
+			No_of_seats: 1,
+		},
+		{
+			Trip_id:     3,
+			Rider_id:    5,
+			No_of_seats: 1,
+		},
 	}
 	db.Create(&trip_mapping)
 	past_trip_mapping = []models.PASTTRIPMAPPING{
