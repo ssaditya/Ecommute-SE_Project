@@ -60,6 +60,15 @@ func TestLogin(t *testing.T) {
 
 }
 
+func TestGetUserByUsername(t *testing.T) {
+
+	w := httptest.NewRecorder()
+	req, _ := http.NewRequest("GET", "/getUserByUsername/stephen123", nil)
+	router.ServeHTTP(w, req)
+
+	assert.Equal(t, 200, w.Code)
+}
+
 func TestDeleteUser(t *testing.T) {
 
 	w := httptest.NewRecorder()

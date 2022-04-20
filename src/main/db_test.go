@@ -14,6 +14,7 @@ var dbName string = "test.db"
 var storeName string = "testsecret"
 var sessionName string = "testsession"
 var users []models.USERS
+var user models.USERS
 var trips []models.REGISTEREDTRIPS
 var trip_mapping []models.TRIPMAPPINGS
 var router *gin.Engine
