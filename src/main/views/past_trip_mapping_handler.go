@@ -2,6 +2,7 @@ package views
 
 import (
 	"net/http"
+
 	//"strconv"
 
 	"github.com/gin-gonic/gin"
@@ -21,26 +22,25 @@ func CreatePastTrip(db *gorm.DB) gin.HandlerFunc {
 		}
 
 		result := db.Create(&pasttripmapping)
+		var tripID = pasttripmapping.Trip_id
 
 		if result.Error != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": result.Error.Error()})
 			return
 		}
 		var regtrips models.REGISTEREDTRIPS
-		if err := db.Where("trip_id = ?", pasttripmapping.Trip_id).First(&regtrips).Error; err != nil {
+		if err := db.Where("trip_id = ?", tripID).First(&regtrips).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
 			return
 		}
 
 		db.Delete(&regtrips)
 
-		var tripmapping models.TRIPMAPPINGS
-		if err := db.Where("trip_id = ?", pasttripmapping.Trip_id).First(&tripmapping).Error; err != nil {
+		var tripmapping []models.TRIPMAPPINGS
+		if err := db.Where("trip_id = ?", tripID).Delete(&tripmapping).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
 			return
 		}
-
-		db.Delete(&tripmapping)
 
 		c.JSON(http.StatusOK, gin.H{
 			"result": "Past Trips Recorded Successfully",
@@ -53,13 +53,13 @@ func CreatePastTrip(db *gorm.DB) gin.HandlerFunc {
 
 func GetPastTripsById(db *gorm.DB) gin.HandlerFunc {
 	fn := func(c *gin.Context) {
-		var record models.PASTTRIPMAPPING
+		var record []models.PASTTRIPMAPPING
 		mode := c.Param("Mode")
 		Id := c.Param("Id")
 		if mode == "Driver" {
 			db.Where("driver_id = ?", Id).Find(&record)
 
-		} else {
+		} else if mode == "Rider" {
 			db.Where("rider_id = ?", Id).Find(&record)
 
 		}

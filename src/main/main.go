@@ -43,21 +43,33 @@ func SetupRouter(db *gorm.DB, storeName string, sessionName string) *gin.Engine 
 	r.Use(sessions.Sessions(sessionName, store))
 
 	// **** END POINTS ****
+
+	//****USER API ENDPOINTS
 	r.POST("/createUser", v.CreateUser(db))
 	r.POST("/login", v.LoginUser(db))
 	r.POST("/logout", v.LogoutUser)
 	r.GET("/getUserByUsername/:username", v.GetUserByUsername(db))
 	r.PUT("/edituserProfile", v.EditUserProfile(db))
 	r.DELETE("/deleteUser/:username", v.DeleteUser(db))
+
+	//****TRIP END POINTS
 	r.POST("/createTrip", v.CreateTrip(db))
 	r.GET("/getAllTrips", v.GetAllTrips(db))
+	r.GET("/getTrips/:source/:destination/:date/:seats", v.GetTrips(db))
 	r.PUT("/editTrip", v.EditTrip(db))
 	r.DELETE("/deleteTrip/:trip_id", v.DeleteTrip(db))
-	r.POST("/createTripMapping", v.CreateTripMapping(db))
-	r.GET("/getTrips", v.GetTrips(db))
-	r.GET("/getDriverUpcomingTrips/:driver_id", v.GetDriverUpcomingTrips(db))
-	r.GET("/GetRiderUpcomingTrips/:rider_id", v.GetRiderUpcomingTrips(db))
 
+	//****TRIP MAPPING END POINTS
+	r.POST("/createTripMapping", v.CreateTripMapping(db))
+	r.DELETE("/deleteTripMappingByDriver/:trip_id", v.DeleteTripMappingByDriver(db))
+
+	//****UPCOMING TRIP END POINTS
+	r.GET("/getDriverUpcomingTrips/:driver_id", v.GetDriverUpcomingTrips(db))
+	r.GET("/getRiderUpcomingTrips/:rider_id", v.GetRiderUpcomingTrips(db))
+
+	//****PAST TRIP END POINTS
+	r.POST("/createPastTrip", v.CreatePastTrip(db))
+	r.GET("/getPastTripsById/:Mode/:Id", v.GetPastTripsById(db))
 	return r
 }
 
