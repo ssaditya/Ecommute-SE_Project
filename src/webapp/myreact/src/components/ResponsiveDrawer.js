@@ -81,17 +81,18 @@ function ResponsiveDrawer(props) {
   }, [])
 
   const getTrips = () => {
-    axios.get('http://localhost:8181/getTrips', {
-      "trip_id": 1,
-      "driver_id": 1,
-      "source": pickup,
-      "destination": dropOff,
-      "date_of_trip": date,
-      "time_of_trip": time,
-      "no_of_seats": seats
+    axios.get('http://localhost:8181/getTrips/'+`${pickup}`+'/'+`${dropOff}`+'/'+`${date}`+'/'+`${seats}`, {
+      // "trip_id": 1,
+      // "driver_id": 1,
+      // "source": pickup,
+      // "destination": dropOff,
+      // "date_of_trip": date,
+      // "time_of_trip": time,
+      // "no_of_seats": seats
     })
       .then(function (response) {
         console.log(response);
+        console.log("yay");
       })
       .catch(function (error) {
         console.log(error);

@@ -29,7 +29,8 @@ const getUserDetails = () => {
             dataService.getData().subscribe(message => {
                 alert(message.value);
             })
-            window.location.href="/userprofile";
+
+            window.location.href = "/userprofile";
         })
         .catch(function (error) {
             console.log(error);
