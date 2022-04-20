@@ -1,24 +1,24 @@
 # API Documentation 
 
 ## List of APIs
-### 1. CreateUser API
-### 2. EditUser API
-### 3. DeleteUser API
-### 4. GetUserByUsername API
-### 5. CreateTrip API
-### 6. EditTrip API
-### 7. DeleteTrip API
-### 8. GetAllTrips API
-### 9. GetTrips API
-### 10. CreateTripMapping API
-### 11. GetDriverUpcomingTrips API
-### 12. GetRiderUpcomingTrips API
-### 13. CreatePastTrip API
-### 14. getPastTripsById API
-### 15. DeleteTripMappingByRider API
-### 16. DeleteTripMappingByDriver API
-### 17.Login API
-### 18.Logout API
+#### 1. CreateUser API
+#### 2. EditUser API
+#### 3. DeleteUser API
+#### 4. GetUserByUsername API
+#### 5. CreateTrip API
+#### 6. EditTrip API
+#### 7. DeleteTrip API
+#### 8. GetAllTrips API
+#### 9. GetTrips API
+#### 10. CreateTripMapping API
+#### 11. GetDriverUpcomingTrips API
+#### 12. GetRiderUpcomingTrips API
+#### 13. CreatePastTrip API
+#### 14. getPastTripsById API
+#### 15. DeleteTripMappingByRider API
+#### 16. DeleteTripMappingByDriver API
+#### 17.Login API
+#### 18.Logout API
 
 ## User Registration API
 ### 1. CreateUser API: 
