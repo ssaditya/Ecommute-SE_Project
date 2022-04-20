@@ -19,6 +19,7 @@ class RideHistory extends Component {
 
         const drawerWidth = 240;
         const driverId = 1;
+        const riderId = 1;
         var localResponse = null;
 
         const getUpcomingTrips = () => {
@@ -35,6 +36,42 @@ class RideHistory extends Component {
                     console.log(error);
                 });
         }
+
+        const mode1 = "Driver";
+        const mode2 = "Rider";
+
+
+        const getPastTripsDriver = () => {
+            //console.log("entered");
+            axios.get('http://localhost:8181/getPastTripsById/' + `${mode1}` + '/' + `${driverId}`, {
+
+            })
+                .then(function (response) {
+                    //console.log(response);
+                    localResponse = response.data.data;
+                    console.log(localResponse);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+
+        const getPastTripsRider = () => {
+            //console.log("entered");
+            axios.get('http://localhost:8181/getPastTripsById/' + `${mode2}` + '/' + `${riderId}`, {
+
+            })
+                .then(function (response) {
+                    //console.log(response);
+                    localResponse = response.data.data;
+                    console.log(localResponse);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+
+
 
 
         return (
@@ -58,11 +95,21 @@ class RideHistory extends Component {
                     </Box>
                     <Box>
                         <div>
-                            <Card className='pasttripsCard'>
+                            <Card className='pasttripsDriverCard'>
                                 <CardBody>
-                                    <h3 id="rideHistoryHeader">Past Trips</h3>
+                                    <h3 id="rideHistoryHeader">Past Trips in Driver Mode</h3>
                                 </CardBody>
-                                <Button id="pasttripsId" color="secondary" size="md" className='pasttripsClass' block>
+                                <Button id="pasttripsdriverId" onClick={getPastTripsDriver} color="secondary" size="md" className='pasttripsdriverClass' block>
+                                    <NavLink className="nav-link" to="/pasttrips">
+                                        View
+                                    </NavLink>
+                                </Button>
+                            </Card>
+                            <Card className='pasttripsRiderCard'>
+                                <CardBody>
+                                    <h3 id="rideHistoryHeader">Past Trips in Rider Mode</h3>
+                                </CardBody>
+                                <Button id="pasttripsriderId" onClick={getPastTripsRider} color="secondary" size="md" className='pasttripsriderClass' block>
                                     <NavLink className="nav-link" to="/pasttrips">
                                         View
                                     </NavLink>
