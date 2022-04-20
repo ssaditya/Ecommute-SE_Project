@@ -141,3 +141,12 @@ func TestGetDriverUpcomingTrips(t *testing.T) {
 
 	assert.Equal(t, 200, w.Code)
 }
+
+func TestGetRiderUpcomingTrips(t *testing.T) {
+
+	w := httptest.NewRecorder()
+	req, _ := http.NewRequest("GET", "/getRiderUpcomingTrips/2", nil)
+	router.ServeHTTP(w, req)
+
+	assert.Equal(t, 200, w.Code)
+}
