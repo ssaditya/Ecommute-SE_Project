@@ -83,7 +83,7 @@ func DeleteTripMappingByRider(db *gorm.DB) gin.HandlerFunc {
 		}
 
 		var rec models.TRIPMAPPINGS
-		if err := db.Where("trip_id = ? AND rider_id = ?", trip_id, rider_id).First(&rec).Error; err != nil {
+		if err := db.Where("trip_id = ? AND rider_id = ?", trip_id, rider_id).Find(&rec).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
 			return
 		}
