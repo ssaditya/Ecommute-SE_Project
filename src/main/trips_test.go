@@ -123,3 +123,12 @@ func TestCreatePastTripMapping(t *testing.T) {
 	router.ServeHTTP(nr, req1)
 	assert.Equal(t, 200, nr.Code)
 }
+
+func TestGetPastTripsById(t *testing.T) {
+
+	w := httptest.NewRecorder()
+	req, _ := http.NewRequest("GET", "/getPastTripsById/Rider/2", nil)
+	router.ServeHTTP(w, req)
+
+	assert.Equal(t, 200, w.Code)
+}
