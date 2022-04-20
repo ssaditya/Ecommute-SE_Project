@@ -150,3 +150,12 @@ func TestGetRiderUpcomingTrips(t *testing.T) {
 
 	assert.Equal(t, 200, w.Code)
 }
+
+func TestDeleteTripMappingByDriver(t *testing.T) {
+	nr := httptest.NewRecorder()
+	req1, _ := http.NewRequest("DELETE", "/deleteTripMappingByDriver/2", nil)
+	router.ServeHTTP(nr, req1)
+	req1.Header.Set("credentials", "include")
+	router.ServeHTTP(nr, req1)
+	assert.Equal(t, 200, nr.Code)
+}
