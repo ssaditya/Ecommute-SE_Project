@@ -11,6 +11,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 const drawer = (
+    
     <div className='sidepaneldiv'>
         <div>
             <a href='/home' className='sidepanellinks'>

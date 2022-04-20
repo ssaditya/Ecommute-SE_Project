@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import drawer from './NavbarComponent';
-import { Card, CardBody, Button } from 'reactstrap';
+import { Card, CardTitle, CardText, CardBody, Button } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
@@ -15,27 +15,27 @@ class RideHistory extends Component {
         }
 
     }
-
     render() {
 
         const drawerWidth = 240;
-        const tripId = 1;
+        const driverId = 1;
         var localResponse = null;
 
         const getUpcomingTrips = () => {
             //console.log("entered");
-            axios.get('http://localhost:8181/getDriverUpcomingTrips/' + `${tripId}`, {
+            axios.get('http://localhost:8181/getDriverUpcomingTrips/' + `${driverId}`, {
 
             })
                 .then(function (response) {
                     //console.log(response);
-                    localResponse = JSON.stringify(response.data.data);
+                    localResponse = response.data.data;
                     console.log(localResponse);
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
         }
+
 
         return (
             <div style={{ marginLeft: 350, marginTop: 150 }}>
