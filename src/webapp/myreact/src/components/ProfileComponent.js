@@ -11,14 +11,19 @@ class Profile extends Component {
         super(props);
     }
 
-    render() {
+    componentDidMount() {
 
-        console.log("abovee dataservice");
-
-        dataService.getData().subscribe(message => {
+        this.subscription = dataService.getData().subscribe(message => {
             console.log("abovee dataservice message");
             console.log(message);
         })
+    }
+
+    componentWillUnmount() {
+        this.subscription.unsubscribe();
+    }
+
+    render() {
 
         const drawerWidth = 240;
 
