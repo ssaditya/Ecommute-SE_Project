@@ -100,3 +100,26 @@ func TestCreateTripMapping(t *testing.T) {
 	router.ServeHTTP(nr, req1)
 	assert.Equal(t, 200, nr.Code)
 }
+
+func TestCreatePastTripMapping(t *testing.T) {
+	trip := models.PASTTRIPMAPPING{
+		Trip_id:      1,
+		Rider_id:     2,
+		Driver_id:    1,
+		Source:       "Orlando",
+		Destination:  "Gainesville",
+		Date_of_trip: "03-31-2022",
+		Time_of_trip: "8:30:35",
+		Status:       "Cancelled",
+	}
+	payload, _ := json.Marshal(trip)
+	nr := httptest.NewRecorder()
+	req1, _ := http.NewRequest("POST", "/createPastTrip", strings.NewReader(string(payload)))
+	req1.Header.Set("Content-Type", "application/json")
+	req1.Header.Set("credentials", "include")
+	router.ServeHTTP(nr, req1)
+	cookieValue := nr.Result().Header.Get("Set-Cookie")
+	req1.Header.Set("Cookie", cookieValue)
+	router.ServeHTTP(nr, req1)
+	assert.Equal(t, 200, nr.Code)
+}
