@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #010610;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@
 .jumbotron {
   padding: 2px 2px 2px 2px;
   margin: 0px auto;
-  background-color: #00FF7F;
+  background-color: #000000;
 }
 
 body {
