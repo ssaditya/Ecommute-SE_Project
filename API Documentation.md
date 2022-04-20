@@ -104,9 +104,9 @@ localhost:8181/getTrips/:source/:destination/:date/:seats
 ##### Functionality:  
 GetTrips API is to fetch all the registered trips for a given source, destination, date and no of seats
 ##### Sample Request:  
-![GetTrips](https://user-images.githubusercontent.com/41318802/161361777-19b5c8b3-b1d6-445d-aec5-c28c641f57d7.JPG)
-##### Sample Response:
-![GetTripsResp](https://user-images.githubusercontent.com/41318802/161361796-b25348da-77f1-4c34-bcaa-334395e8a103.JPG)
+![GetTrips](https://user-images.githubusercontent.com/41318802/164141382-7785868a-f925-43e4-8bba-54ee629084e0.jpeg)
+
+
 
 ### Trip Mapping API
 #### 8. CreateTripMapping API:
