@@ -192,7 +192,8 @@ a.sidepanellinks {
   margin-bottom: 2%;
 }
 
-.pasttripsCard,
+.pasttripsDriverCard,
+.pasttripsRiderCard,
 .upcomingtripsCard {
   width: 100%;
   margin-bottom: 10px;

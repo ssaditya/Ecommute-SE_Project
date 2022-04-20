@@ -16,6 +16,19 @@ function RiderConfirmation(props) {
         console.log(error);
       });
   }
+  const tripid = 1;
+  const riderId = 1;
+  const deleteTripRider = () => {
+    axios.delete('http://localhost:8181/deleteTripMappingByRider/' + `${tripid}` + '/' + `${riderId}`, {
+
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
   /*const getData = () => {
 
     axios.get('http://localhost:8181/getAllTrips', {
