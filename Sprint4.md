@@ -1,14 +1,14 @@
 # Sprint 4 Report  
 
-## Team Members:    
-### Backend
-Sai Aditya Sandupatla 
-Vaishnavi Donepudi 
-### Frontend
-Raj Gopala Vamsee Jaggaraju
-Sai Swaroop Nimmagadda
+### Team Members:    
+#### Backend
+- Sai Aditya Sandupatla 
+- Vaishnavi Donepudi 
+#### Frontend
+- Raj Gopala Vamsee Jaggaraju
+- Sai Swaroop Nimmagadda
 
-## Tasks Completed for Sprint 4
+### Tasks Completed for Sprint 4
 - Addition of Login APIs
 - Addition of new PastTripMapping APIs
 - Development of Delete Functionality APIs
@@ -19,8 +19,8 @@ Sai Swaroop Nimmagadda
 - Preparing Videoos for Project Deliverables
 - API Documentation
 
-## BackEnd:
-### Tasks Accomplished
+### BackEnd:
+#### Tasks Accomplished
 - Developed Upcoming Trip APIs
 - Developed Past Trip APIs
 - Developed Login APIs
@@ -30,13 +30,13 @@ Sai Swaroop Nimmagadda
 - Unit Tests for APIs
 
 
-### API Documentation 
+#### API Documentation 
 Please refer to [API Documentation](https://github.com/ssaditya/Ecommute-SE_Project/blob/main/API%20Documentation.md)
 
-### Sprint Board 
+#### Sprint Board 
 Please refer to [Sprint Board](https://github.com/ssaditya/Ecommute-SE_Project/projects/5)
 
-### Unit Tests for Backend
+#### Unit Tests for Backend
 - TestGetUserByUsername 
 - TestLogin
 - TestGetTrips
@@ -48,10 +48,10 @@ Please refer to [Sprint Board](https://github.com/ssaditya/Ecommute-SE_Project/p
 - DeleteTripMappingByDriver
 - DeleteTripMappingByRider
  
-### Video Demo for Unit Tests
+#### Video Demo for Unit Tests
 
 
-#### GO Tests:
+##### GO Tests:
 cd src/main  
 go build  
 go test -v 
