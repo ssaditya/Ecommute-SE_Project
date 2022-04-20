@@ -49,7 +49,7 @@ func SetupRouter(db *gorm.DB, storeName string, sessionName string) *gin.Engine 
 	r.POST("/login", v.LoginUser(db))
 	r.POST("/logout", v.LogoutUser)
 	r.GET("/getUserByUsername/:username", v.GetUserByUsername(db))
-	r.PUT("/edituserProfile", v.EditUserProfile(db))
+	r.PUT("/editUserProfile", v.EditUserProfile(db))
 	r.DELETE("/deleteUser/:username", v.DeleteUser(db))
 
 	//****TRIP END POINTS

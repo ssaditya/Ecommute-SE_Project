@@ -180,12 +180,10 @@ func DeleteUser(db *gorm.DB) gin.HandlerFunc {
 	fn := func(c *gin.Context) {
 
 		var record models.USERS
-		if err := db.Where("username = ?", c.Param("username")).First(&record).Error; err != nil {
+		if err := db.Where("username = ?", c.Param("username")).Delete(&record).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
 			return
 		}
-
-		db.Delete(&record)
 		c.JSON(http.StatusOK, gin.H{"data": true})
 
 	}
