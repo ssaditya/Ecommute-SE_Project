@@ -14,6 +14,7 @@ var dbName string = "test.db"
 var storeName string = "testsecret"
 var sessionName string = "testsession"
 var users []models.USERS
+var user models.USERS
 var trips []models.REGISTEREDTRIPS
 var trip_mapping []models.TRIPMAPPINGS
 var router *gin.Engine
@@ -73,7 +74,7 @@ func initData(db *gorm.DB) {
 			Driver_id:    1,
 			Source:       "Orlando",
 			Destination:  "Gainesville",
-			Date_of_trip: "03/31/2022",
+			Date_of_trip: "03-31-2022",
 			Time_of_trip: "8:30PM",
 			No_of_seats:  3,
 		},
@@ -81,7 +82,7 @@ func initData(db *gorm.DB) {
 			Driver_id:    2,
 			Source:       "Orlando",
 			Destination:  "Gainesville",
-			Date_of_trip: "03/31/2022",
+			Date_of_trip: "03-31-2022",
 			Time_of_trip: "7:00AM",
 			No_of_seats:  2,
 		},
@@ -89,7 +90,7 @@ func initData(db *gorm.DB) {
 			Driver_id:    1,
 			Source:       "Gainesville",
 			Destination:  "Orlando",
-			Date_of_trip: "03/31/2022",
+			Date_of_trip: "03-31-2022",
 			Time_of_trip: "7:30AM",
 			No_of_seats:  3,
 		},
