@@ -26,6 +26,7 @@ class Profile extends Component {
     render() {
 
         const drawerWidth = 240;
+        const user = this.props.user;
 
         return (
             <div style={{ marginLeft: 350, marginTop: 150 }}>
@@ -51,23 +52,31 @@ class Profile extends Component {
                             <h1 className='userprofileheading'>User Profile</h1>
                             <Card body inverse color="primary">
                                 <CardTitle><h3>Name</h3></CardTitle>
-                                <CardText>Raj Gopala Vamsee Jaggaraju</CardText>
+                                <CardText>{user.fname}</CardText>
                             </Card>
                             <Card body inverse color="success">
                                 <CardTitle><h3>Phone Number</h3></CardTitle>
-                                <CardText>+1 352 888 2788</CardText>
+                                <CardText>{user.phoneno}</CardText>
                             </Card>
                             <Card body inverse color="info">
                                 <CardTitle><h3>Email Address</h3></CardTitle>
-                                <CardText>vamsee2312@gmail.com</CardText>
+                                <CardText>{user.username}</CardText>
                             </Card>
                             <Card body inverse color="warning">
-                                <CardTitle><h3>Upcoming Trip</h3></CardTitle>
-                                <CardText> 20th April 11:59 PM</CardText>
+                                <CardTitle><h3>Date Of Birth</h3></CardTitle>
+                                <CardText>{user.dob}</CardText>
                             </Card>
                             <Card body inverse color="danger">
-                                <CardTitle><h3>Rating</h3></CardTitle>
-                                <CardText>4.2 Stars</CardText>
+                                <CardTitle><h3>User Rating</h3></CardTitle>
+                                <CardText>{user.avg_rating} Stars</CardText>
+                            </Card>
+                            <Card body inverse color="dark">
+                                <CardTitle><h3>Bio</h3></CardTitle>
+                                <CardText>{user.bio}</CardText>
+                            </Card>
+                            <Card body inverse color="secondary">
+                                <CardTitle><h3>Car Name</h3></CardTitle>
+                                <CardText>{user.carname}</CardText>
                             </Card>
                         </div>
                     </Box>
