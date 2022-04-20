@@ -1,13 +1,13 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
-class  UpcomingTrips extends Component {
-    constructor(props){
+class UpcomingTrips extends Component {
+    constructor(props) {
         super(props);
     };
 
-    render(){
+    render() {
 
-        return(
+        return (
             <div>
             </div>
         );
