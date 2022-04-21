@@ -75,7 +75,7 @@ class Main extends Component {
                     <Route path="/pasttrips" element={<PastTrips pastdriver={this.state.pastdriver} />} />
                     <Route path="/pasttripsrider" element={<PastTripsRider pastrider={this.state.pastrider} />} />
                     <Route path="/upcomingtrips" element={<UpcomingTrips upcomingdriver= {this.state.upcomingdriver}/>} />
-                    <Route path="/upcomingtripdelete" element={<UpcomingTripDelete/>} />
+                    <Route path="/upcomingtripdelete" element={<UpcomingTripDelete upcomingdriver= {this.state.upcomingdriver}/>} />
                     <Route path="/listofrides" element={<ListOfRides />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="*" element={<Navigate to="/login" />} />
