@@ -34,8 +34,15 @@ class Support extends Component {
                         </Drawer>
                     </Box>
                     <Box>
-                        <div>
-
+                        <div class="card">
+                            <div class="card-header">
+                                Ecommute Support
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Reach us out</h5>
+                                <p class="card-text">You can send out a mail to us at <a href="#">getsupport@ecommute.com</a></p>
+                                <a href="#" class="btn btn-secondary">Back</a>
+                            </div>
                         </div>
                     </Box>
                 </Box>
