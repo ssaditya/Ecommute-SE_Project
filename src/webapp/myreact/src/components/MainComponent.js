@@ -6,6 +6,9 @@ import Rider from './RiderComponent';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { MODES } from '../shared/modes';
 import { USER } from '../shared/testUser';
+import { PASTDRIVER } from '../shared/testUser';
+import { PASTRIDER } from '../shared/testUser';
+import { UPCOMINGDRIVER } from '../shared/testUser';
 import DriverConfirmation from './DriverConfirmationComponent';
 import RiderConfirmation from './RiderConfirmationComponent';
 import Login from './LoginComponent';
@@ -18,15 +21,20 @@ import Wallet from './WalletComponent';
 import FAQ from './FAQComponent';
 import Support from './SupportComponent';
 import PastTrips from './PastTripsComponent';
+import PastTripsRider from './PastTripsRiderComponent';
 import UpcomingTrips from './UpcomingTripsComponent';
 import ListOfRides from './ListOfRidesComponent';
+import UpcomingTripDelete from './UpcomingTripDelete';
 
 class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
             modes: MODES,
-            user: USER
+            user: USER,
+            pastdriver: PASTDRIVER,
+            pastrider: PASTRIDER,
+            upcomingdriver: UPCOMINGDRIVER
         };
     }
     render() {
@@ -64,8 +72,10 @@ class Main extends Component {
                     <Route path="/support" element={<Support />} />
                     <Route path="/wallet" element={<Wallet />} />
                     <Route path="/faq" element={<FAQ />} />
-                    <Route path="/pasttrips" element={<PastTrips />} />
-                    <Route path="/upcomingtrips" element={<UpcomingTrips />} />
+                    <Route path="/pasttrips" element={<PastTrips pastdriver={this.state.pastdriver} />} />
+                    <Route path="/pasttripsrider" element={<PastTripsRider pastrider={this.state.pastrider} />} />
+                    <Route path="/upcomingtrips" element={<UpcomingTrips upcomingdriver= {this.state.upcomingdriver}/>} />
+                    <Route path="/upcomingtripdelete" element={<UpcomingTripDelete/>} />
                     <Route path="/listofrides" element={<ListOfRides />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="*" element={<Navigate to="/login" />} />

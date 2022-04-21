@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-import { Card, CardBody, Button, CardText, NavLink } from "reactstrap";
+import { Card, CardBody, CardText, NavLink } from "reactstrap";
 
-class PastTrips extends Component {
+class PastTripsRider extends Component {
     constructor(props) {
         super(props);
     };
 
     render() {
 
-        const pasttrips = this.props.pastdriver;
+        const pasttrips = this.props.pastrider;
 
         return (
             <div>
-                <h1 className="pastdisplay">Past Trips : Driver Mode</h1>
+                <h1 className="pastdisplay">Past Trips : Rider Mode</h1>
                 <Card className='card'>
                     <CardBody>
                         <h5 class="pasttripheader">Trip 1</h5>
@@ -29,9 +29,17 @@ class PastTrips extends Component {
                         <CardText className='temp'>Date : {pasttrips[1].date}</CardText>
                     </CardBody>
                 </Card>
+                <Card className='card'>
+                    <CardBody>
+                        <h5 class="pasttripheader">Trip 3</h5>
+                        <CardText className='temp'>Source : {pasttrips[2].source}</CardText>
+                        <CardText className='temp'>Destination : {pasttrips[2].destination}</CardText>
+                        <CardText className='temp'>Date : {pasttrips[2].date}</CardText>
+                    </CardBody>
+                </Card>
             </div>
         );
     }
 }
 
-export default PastTrips;
+export default PastTripsRider;
