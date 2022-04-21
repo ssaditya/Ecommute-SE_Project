@@ -17,13 +17,15 @@ class ListOfRides extends Component {
         const trip_id = 1;
         const rider_id = 1;
         const no_of_seats = 1;
-        let  localResponse=null;
+        let localResponse = null;
+
+        const listofrides = this.props.listofrides;
 
         const myTripsList = () => {
             axios.post('http://localhost:8181/createTripMapping', {
-                "trip_id" : trip_id,
-                "rider_id" : rider_id,
-                "no_of_seats" : no_of_seats
+                "trip_id": trip_id,
+                "rider_id": rider_id,
+                "no_of_seats": no_of_seats
             })
                 .then(function (response) {
                     //console.log(response);
@@ -37,21 +39,43 @@ class ListOfRides extends Component {
         }
 
         return (
+
             <div>
-                <Card>
+                <Card className='card'>
                     <CardBody>
-                        <CardTitle>Trip 1</CardTitle>
-                        <CardSubtitle>Source</CardSubtitle>
+                        <h5 class="upcomingtripheader">{listofrides[0].date}</h5>
+                        <CardText className='temp'>Source : {listofrides[0].source}</CardText>
+                        <CardText className='temp'>Destination : {listofrides[0].destination}</CardText>
                     </CardBody>
+                    <a className="listclassm" href="/riderconfirmation">Book Ride!</a>
+                    <a className="backclassm" href="/rider">Back</a>
+                </Card>
+                <Card className='card'>
                     <CardBody>
-                        <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                        <Button style={{ marginRight: 20 }} onClick={myTripsList}><Link style={{ textDecoration: "none", color: "white" }} to="/riderconfirmation">
-                            Select Trip
-                        </Link></Button>
-                        <Button style={{ marginRight: 20 }}><Link style={{ textDecoration: "none", color: "white" }} to="/rider">
-                            Back
-                        </Link></Button>
+                        <h5 class="upcomingtripheader">{listofrides[1].date}</h5>
+                        <CardText className='temp'>Source : {listofrides[1].source}</CardText>
+                        <CardText className='temp'>Destination : {listofrides[1].destination}</CardText>
                     </CardBody>
+                    <a className="listclassm" href="/riderconfirmation">Book Ride!</a>
+                    <a className="backclassm" href="/rider">Back</a>
+                </Card>
+                <Card className='card'>
+                    <CardBody>
+                        <h5 class="upcomingtripheader">{listofrides[2].date}</h5>
+                        <CardText className='temp'>Source : {listofrides[2].source}</CardText>
+                        <CardText className='temp'>Destination : {listofrides[2].destination}</CardText>
+                    </CardBody>
+                    <a className="listclassm" href="/riderconfirmation">Book Ride!</a>
+                    <a className="backclassm" href="/rider">Back</a>
+                </Card>
+                <Card className='card'>
+                    <CardBody>
+                        <h5 class="upcomingtripheader">{listofrides[3].date}</h5>
+                        <CardText className='temp'>Source : {listofrides[3].source}</CardText>
+                        <CardText className='temp'>Destination : {listofrides[3].destination}</CardText>
+                    </CardBody>
+                    <a className="listclassm" href="/riderconfirmation">Book Ride!</a>
+                    <a className="backclassm" href="/rider">Back</a>
                 </Card>
             </div>
         );

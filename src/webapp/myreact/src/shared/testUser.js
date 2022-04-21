@@ -55,3 +55,27 @@ export const UPCOMINGDRIVER = [
         date: "28th April 2022",
     }
 ]
+
+export const LISTOFRIDES = [
+    {
+        source: "Ocala",
+        destination: "Miami",
+        date: "27th April 2022",
+    },
+    {
+        source: "Ocala",
+        destination: "Gainesville",
+        date: "28th April 2022",
+    },
+    {
+        source: "Gainesville",
+        destination: "Ocala",
+        date: "29th April 2022",
+    },
+    {
+        source: "Ocala",
+        destination: "Gainesville",
+        date: "30th April 2022",
+    }
+
+]

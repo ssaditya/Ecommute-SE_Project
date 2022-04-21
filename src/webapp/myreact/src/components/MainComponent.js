@@ -9,6 +9,7 @@ import { USER } from '../shared/testUser';
 import { PASTDRIVER } from '../shared/testUser';
 import { PASTRIDER } from '../shared/testUser';
 import { UPCOMINGDRIVER } from '../shared/testUser';
+import { LISTOFRIDES } from '../shared/testUser';
 import DriverConfirmation from './DriverConfirmationComponent';
 import RiderConfirmation from './RiderConfirmationComponent';
 import Login from './LoginComponent';
@@ -34,7 +35,8 @@ class Main extends Component {
             user: USER,
             pastdriver: PASTDRIVER,
             pastrider: PASTRIDER,
-            upcomingdriver: UPCOMINGDRIVER
+            upcomingdriver: UPCOMINGDRIVER,
+            listofrides: LISTOFRIDES
         };
     }
     render() {
@@ -76,7 +78,7 @@ class Main extends Component {
                     <Route path="/pasttripsrider" element={<PastTripsRider pastrider={this.state.pastrider} />} />
                     <Route path="/upcomingtrips" element={<UpcomingTrips upcomingdriver= {this.state.upcomingdriver}/>} />
                     <Route path="/upcomingtripdelete" element={<UpcomingTripDelete upcomingdriver= {this.state.upcomingdriver}/>} />
-                    <Route path="/listofrides" element={<ListOfRides />} />
+                    <Route path="/listofrides" element={<ListOfRides listofrides={this.state.listofrides} />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="*" element={<Navigate to="/login" />} />
                     <Route path="/signup" element={<Signup />} />
@@ -86,4 +88,3 @@ class Main extends Component {
     }
 }
 export default Main;
-

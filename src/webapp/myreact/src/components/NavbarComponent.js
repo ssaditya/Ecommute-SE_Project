@@ -50,7 +50,7 @@ function MyDrawer() {
                         <ListItemText primary="Home" />
                     </ListItem>
                 </a>
-                <a href='#' className='sidepanellinks' onClick={getUserDetails}>
+                <a href='/userprofile' className='sidepanellinks' onClick={getUserDetails}>
                     <ListItem button key="Profile">
                         <ListItemIcon>
                             <AccountCircleRoundedIcon />
@@ -66,14 +66,14 @@ function MyDrawer() {
                         <ListItemText primary="Ride History" />
                     </ListItem>
                 </a>
-                <a href='/wallet' className='sidepanellinks'>
+                {/* <a href='/wallet' className='sidepanellinks'>
                     <ListItem button key="Wallet">
                         <ListItemIcon>
                             <AccountBalanceWalletIcon />
                         </ListItemIcon>
                         <ListItemText primary="Wallet" />
                     </ListItem>
-                </a>
+                </a> */}
                 <a href='/faq' className='sidepanellinks'>
                     <ListItem button key="FAQ">
                         <ListItemIcon>
