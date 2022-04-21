@@ -34,8 +34,32 @@ class FAQ extends Component {
                         </Drawer>
                     </Box>
                     <Box>
-                        <div>
-
+                        <div class="card">
+                            <div class="card-header">
+                                Help with the Trip
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">How do I cancel the Trip</h5>
+                                <a href="#" class="btn btn-primary">View</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                Account Options
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Changing my Account Settings</h5>
+                                <a href="#" class="btn btn-primary">View</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                Signing Up
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Creating a Ride as a Driver</h5>
+                                <a href="#" class="btn btn-primary">View</a>
+                            </div>
                         </div>
                     </Box>
                 </Box>
