@@ -44,7 +44,7 @@
 .jumbotron {
   padding: 2px 2px 2px 2px;
   margin: 0px auto;
-  background-color: #000000;
+  background-color: springgreen;
 }
 
 body {
@@ -69,7 +69,7 @@ h4 {
 
 .pasttripheader {
   text-align: center;
-  background-color:#A9A9A9;
+  background-color: #A9A9A9;
   padding: 5px;
 }
 
@@ -210,7 +210,8 @@ a.sidepanellinks {
   text-align: center;
 }
 
-.pastdisplay, .upcomingdisplay {
+.pastdisplay,
+.upcomingdisplay {
   text-align: center;
 }
 
@@ -231,6 +232,19 @@ a.sidepanellinks {
   background-color: black;
 }
 
+.listclassm {
+  border: #000000 solid 1px;
+  border-radius: 10%;
+  text-decoration: none;
+  width: 110px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 1px;
+  padding: 10px;
+  color: black;
+  background-color: #01d28e;
+}
+
 .backclassm {
   border: #000000 solid 1px;
   border-radius: 10%;
@@ -241,5 +255,5 @@ a.sidepanellinks {
   text-align: center;
   padding: 10px;
   color: white;
-  background-color:cadetblue;
+  background-color: cadetblue;
 }
