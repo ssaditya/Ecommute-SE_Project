@@ -67,6 +67,12 @@ h4 {
   padding: 5px;
 }
 
+.pasttripheader {
+  text-align: center;
+  background-color:#A9A9A9;
+  padding: 5px;
+}
+
 .temp {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -202,4 +208,38 @@ a.sidepanellinks {
 
 #rideHistoryHeader {
   text-align: center;
+}
+
+.pastdisplay, .upcomingdisplay {
+  text-align: center;
+}
+
+.upcomingtripheader {
+  background-color: #01d28e;
+}
+
+.deleteclassm {
+  border: #000000 solid 1px;
+  border-radius: 10%;
+  text-decoration: none;
+  width: 110px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 1px;
+  padding: 10px;
+  color: white;
+  background-color: black;
+}
+
+.backclassm {
+  border: #000000 solid 1px;
+  border-radius: 10%;
+  text-decoration: none;
+  width: 110px;
+  margin: auto;
+  margin-bottom: 1px;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  background-color:cadetblue;
 }

@@ -110,7 +110,7 @@ class RideHistory extends Component {
                                     <h3 id="rideHistoryHeader">Past Trips in Rider Mode</h3>
                                 </CardBody>
                                 <Button id="pasttripsriderId" onClick={getPastTripsRider} color="secondary" size="md" className='pasttripsriderClass' block>
-                                    <NavLink className="nav-link" to="/pasttrips">
+                                    <NavLink className="nav-link" to="/pasttripsrider">
                                         View
                                     </NavLink>
                                 </Button>
