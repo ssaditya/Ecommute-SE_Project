@@ -59,5 +59,27 @@ cd src/main
 go build  
 go test -v 
 
+### Frontend
 #### Video Demo for Application
 [Application Demo Link](https://youtu.be/jGSSdWPabGc)
+
+#### Video Demo for Cypress Tests
+[Cypress Tests](https://youtu.be/qT8D9GGeIT8)
+
+#### Steps To Run and Install:
+- To install : npm add cypress --save-dev  
+- In package.json,
+
+  	"scripts": {
+    		"start": "react-scripts start",
+    		"build": "react-scripts build",
+    	   add -> "test": "cypress open",
+    		"eject": "react-scripts eject"
+  	}  
+- In cypress.json,
+	
+	{
+    		"baseUrl" : "http://localhost:3000",
+    		"experimentalStudio" : true
+	}  
+- To run cypress: npm test  
