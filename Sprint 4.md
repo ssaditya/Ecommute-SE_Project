@@ -58,3 +58,6 @@ Please refer to [Sprint Board](https://github.com/ssaditya/Ecommute-SE_Project/p
 cd src/main  
 go build  
 go test -v 
+
+#### Video Demo for Application
+[Application Demo Link](https://youtu.be/jGSSdWPabGc)
